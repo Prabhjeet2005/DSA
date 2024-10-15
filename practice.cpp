@@ -1,65 +1,39 @@
 #include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
-int partition(int *arr, int s, int e)
+void keypad(vector<string> &ans, string output, int index, string digits, string mapping[])
 {
-    int cnt = 0;
-    int pivotElement = arr[s];
-    for (int i = s + 1; i <= e; i++)
+    if (index >= digits.size())
     {
-        if (arr[i] <= pivotElement)
-        {
-            cnt++;
-        }
-    }
-    // At what place pivot should be
-    int pivotIndex = s + cnt;
-    swap(arr[pivotIndex], arr[s]);
-
-    int i = s, j = e;
-    while (i < pivotIndex && j > pivotIndex)
-    {
-        while (arr[i] <= pivotElement)
-        {
-            i++;
-        }
-        while (arr[j] > pivotElement)
-        {
-            j--;
-        }
-        if (i < pivotIndex && j > pivotIndex)
-        {
-            swap(arr[i++], arr[j--]);
-        }
-    }
-    return pivotIndex;
-}
-
-void quickSort(int *arr, int s, int e)
-{
-    if (s >= e)
-    {
+        if (output.size() > 0)
+            ans.push_back(output);
         return;
     }
-    int p = partition(arr, s, e);
-    quickSort(arr, s, p - 1);
-    quickSort(arr, p + 1, e);
+    int number = digits[index] - '0';
+    string alpha = mapping[number];
+    for (int i = 0; i < alpha.size(); i++)
+    {
+        output.push_back(alpha[i]);
+        keypad(ans, output, index + 1, digits, mapping);
+        output.pop_back();
+    }
 }
 
 int main()
 {
-    int arr[6] = {3, 6, 7, 4, 2, 1};
-    int size = 6;
-    for (int i = 0; i < size; i++)
+    string digits = "25";
+    vector<string> ans;
+    string output;
+    int index = 0;
+    string mapping[10] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    keypad(ans, output, index, digits, mapping);
+    cout << "[";
+    for (int i = 0; i < ans.size(); i++)
     {
-        cout << arr[i] << " ";
+        cout << "'" << ans[i] << "'" << ",";
     }
-    cout << endl;
-    quickSort(arr, 0, size - 1);
-    for (int i = 0; i < size; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    cout << "]" << endl;
     return 0;
 }

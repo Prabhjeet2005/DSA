@@ -2,22 +2,36 @@
 #include <vector>
 using namespace std;
 
-void permutation(vector<int>nums,vector<int>output,vector<vector<int>>&ans,int index){
-    if(index>=nums.size()){
-        if(output.size()>0){
-            ans.push_back(output);
-        }
+void solve(vector<string> nums, vector<vector<string>> &ans, int index)
+{
+    if (index >= nums.size())
+    {
+        ans.push_back(nums);
         return;
     }
-    int num=nums[index];
-    permutation(nums, output, ans, index + 1);
+
+    for (int i = index; i < nums.size(); i++)
+    {
+        swap(nums[index], nums[i]);
+        solve(nums, ans, index + 1);
+        swap(nums[index], nums[i]); //BACKTRACKING for CONSISTENCY
+    }
 }
 
 int main()
 {
-    vector<int> nums = {1, 2, 3};
-    vector<vector<int>> ans;
+    vector<string> nums = {"a", "b", "c"};
+    vector<vector<string>> ans;
     int index = 0;
-    vector<int> output;
-    permutation(nums, output, ans, index);
+    solve(nums, ans, index);
+    for (int i = 0; i < ans.size(); i++)
+    {
+        for (int j = 0; j < ans[i].size(); j++)
+        {
+            cout << ans[i][j] << " ";
+        }
+        cout << "    ";
+    }
+    cout << endl;
+    return 0;
 }

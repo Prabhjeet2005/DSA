@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// tc=> O(n)
 void reachHome(int src, int dest)
 {
     if (src == dest)

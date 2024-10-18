@@ -4,6 +4,7 @@ using namespace std;
 // MergeSort Function->Left and Right part Sort
 // Merge Function    -> 2 Temporary Arrays Copy Elements into them Then Sort
 
+// Tc=O(nlogn)
 int merge(int *arr, int s, int e)
 {
     int mid = s + (e - s) / 2;

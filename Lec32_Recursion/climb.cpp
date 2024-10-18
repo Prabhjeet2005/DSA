@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// TC=> 2^n
 int climb(int n)
 {
     if (n == 0)

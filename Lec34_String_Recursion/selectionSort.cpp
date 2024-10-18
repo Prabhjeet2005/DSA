@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 
-//Select Smallest Element
+// Select Smallest Element
 
+// TC=>O(n^2)
 void selectionSort(int *arr, int size)
 {
     if (size == 0 || size == 1)

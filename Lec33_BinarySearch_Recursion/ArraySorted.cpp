@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+
+// TC=>O(n)
 bool isSorted(int arr[], int size)
 {
     if (size <= 1)

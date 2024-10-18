@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+// TC=>O(2^n)
+
 void solve(vector<int> nums, vector<vector<int>> &ans, vector<int> output, int index)
 {
 
@@ -36,5 +38,6 @@ int main()
         }
         cout << "} ,";
     }
+    cout << endl;
     return 0;
 }

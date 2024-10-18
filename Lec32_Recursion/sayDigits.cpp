@@ -1,5 +1,8 @@
 #include<iostream>
 using namespace std;
+
+// TC=> O(log10 n )
+
 void sayDigit(int n, string arr[]){
     if(n==0){
         return;

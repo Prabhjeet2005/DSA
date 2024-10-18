@@ -1,13 +1,16 @@
 #include <iostream>
 using namespace std;
 
+// TC=> WORST CASE O(n^2)
+// TC=> AVG CASE   O(nlogn)
+
 int partition(int *arr, int s, int e)
 {
     int cnt = 0;
     int piviotElement = arr[s];
-    
+
     // s+1
-    for (int i = s + 1; i <= e; i++) 
+    for (int i = s + 1; i <= e; i++)
     {
         if (arr[i] <= piviotElement)
         {
@@ -42,11 +45,11 @@ void quickSort(int *arr, int s, int e)
     {
         return;
     }
-    //Partition
+    // Partition
     int p = partition(arr, s, e);
-    //Left Part SOrt
+    // Left Part SOrt
     quickSort(arr, s, p - 1);
-    //Right Part Sort
+    // Right Part Sort
     quickSort(arr, p + 1, e);
 }
 

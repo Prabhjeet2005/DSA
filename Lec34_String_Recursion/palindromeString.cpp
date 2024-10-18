@@ -1,13 +1,15 @@
 #include <iostream>
 using namespace std;
+
+// TC=>O(n)
 bool checkPalindrome(string str, int i, int j)
 {
-    cout << str<<" "<<str[i]<<" "<<str[j] << endl;
-    if (i > j )
+    cout << str << " " << str[i] << " " << str[j] << endl;
+    if (i > j)
     {
         return 1;
     }
-    if(str[i]!=str[j])
+    if (str[i] != str[j])
     {
         return 0;
     }
@@ -17,7 +19,6 @@ bool checkPalindrome(string str, int i, int j)
         j--;
         return checkPalindrome(str, i, j);
     }
-    
 }
 int main()
 {

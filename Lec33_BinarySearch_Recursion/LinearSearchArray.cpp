@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+
+// TC=>O(n)
 bool found(int *arr, int size, int key)
 {
     if (size == 0)
@@ -9,8 +11,10 @@ bool found(int *arr, int size, int key)
     if (arr[0] == key)
     {
         return 1;
-    }else{
-    return found(arr + 1, size - 1, key);
+    }
+    else
+    {
+        return found(arr + 1, size - 1, key);
     }
 }
 int main()

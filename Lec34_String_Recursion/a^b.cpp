@@ -1,5 +1,7 @@
 #include<iostream>
 using namespace std;
+
+// TC=>O(b)
 int power(int a,int b){
     if(b==0){
         return 1;

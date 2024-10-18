@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+// tc=>O(n^2)
 
 void bubbleSort(int *arr, int size)
 {

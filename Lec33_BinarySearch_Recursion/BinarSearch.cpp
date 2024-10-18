@@ -1,6 +1,8 @@
 #include <iostream>
 #include <array>
 using namespace std;
+
+// tc=>log2n
 bool found(int *arr, int s, int e, int target)
 {
     int mid = s + (e - s) / 2;

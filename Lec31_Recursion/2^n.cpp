@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+//TC-> O(n)
+
 int twon(int n)
 {
     // Base Case

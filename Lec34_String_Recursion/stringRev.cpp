@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+
+//TC=>O(n)
 void rev(string &str, int i)
 {
 

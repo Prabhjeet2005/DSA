@@ -17,6 +17,8 @@ int fib(int n)
 
     return fib(n - 1) + fib(n - 2);
 }
+
+// TC=> O(2^n)
 int main()
 {
     cout << "Enter N: ";

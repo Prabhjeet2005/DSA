@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+
+//TC= O(2^n)
 int sum(int arr[], int size)
 {
 

@@ -2,6 +2,9 @@
 #include <string>
 #include <vector>
 using namespace std;
+
+// tc=>O(2^n)
+
 void solve(string output, string &str, int index, vector<string> &ans)
 {
 

@@ -1,17 +1,22 @@
 #include <iostream>
+#include<string>
 using namespace std;
-
-struct Example4
-{
-    char c1;   // 1 byte
-    double d1; // 8 bytes
-    char c2;   // 1 byte
-    int i1;    // 4 bytes
-    char c3;   // 1 byte
-};
-
 int main()
 {
-    cout << "Size of Example4: " << sizeof(Example4) << " bytes" << endl;
+    int testcases;
+    cin >> testcases;
+    while (testcases--)
+    {
+        int num;
+        cin >> num;
+        string ans(num, '0');
+        for (int i = 0; i < ans.length();i++){
+            if(i&1){
+            ans[i] = '1'; 
+            }
+        }
+        cout << ans;
+        cout << endl;
+    }
     return 0;
 }

@@ -1,18 +1,14 @@
 #include <iostream>
 using namespace std;
-
 class Node
 {
 public:
     int data;
     Node *next;
-    Node *prev;
-
     Node(int data)
     {
         this->data = data;
         this->next = NULL;
-        this->prev = NULL;
     }
 };
 
@@ -33,7 +29,6 @@ void insertAtEnd(Node *&head, int d)
         }
         new_node->next = temp->next;
         temp->next = new_node;
-        new_node->prev = temp;
     }
 }
 
@@ -48,34 +43,55 @@ void print(Node *&head)
     cout << endl;
 }
 
-void reverse(Node* &head){
-    Node *previous = NULL;
-    Node* curr=head;
-    Node *forward=NULL;
+void reverse(Node *&head,Node* &tail,Node* &a)
+{
+    Node *curr=head;
+    Node* prev=a;
+    Node *fwd;
+    Node *temptail = head;
 
-    while(curr!=NULL){
-        forward = curr->next;
-        curr->next = previous;
-        previous=curr;
-        curr = forward;
+    while(curr!=tail->next){
+        fwd = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = fwd;
     }
-    head = previous;
+    tail = temptail;
+    head = prev;
+}
+
+void revk(Node *&head, int k)
+{
+    Node *a = NULL;
+    Node *temp = head;
+    int cnt = 1;
+    Node *tail;
+    while (temp != NULL)
+    {
+        a = temp;
+        temp = temp->next;
+        if(cnt%k==0){
+            tail = temp;
+            reverse(head,tail,a);
+
+        }
+        cnt++;
+    }
 }
 
 int main()
 {
     Node *head = NULL;
-    int size;
+    int size, d;
     cin >> size;
     for (int i = 0; i < size; i++)
     {
-        int d;
         cin >> d;
         insertAtEnd(head, d);
     }
     cout << "Before: ";
     print(head);
-    reverse(head);
+    revk(head, 2);
     cout << "After: ";
     print(head);
 }

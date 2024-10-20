@@ -48,15 +48,17 @@ void print(Node *&head)
     cout << endl;
 }
 
-void reverse(Node* &head){
+void reverse(Node *&head)
+{
     Node *previous = NULL;
-    Node* curr=head;
-    Node *forward=NULL;
+    Node *curr = head;
+    Node *forward = NULL;
 
-    while(curr!=NULL){
+    while (curr != NULL)
+    {
         forward = curr->next;
         curr->next = previous;
-        previous=curr;
+        previous = curr;
         curr = forward;
     }
     head = previous;

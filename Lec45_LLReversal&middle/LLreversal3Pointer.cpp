@@ -6,38 +6,30 @@ class Node
 public:
     int data;
     Node *next;
-    Node *prev;
-
     Node(int data)
     {
         this->data = data;
         this->next = NULL;
-        this->prev = NULL;
     }
 };
 
-void insertAtEnd(Node *&head, int d)
+void insertAtEnd(Node *&head, Node *&tail, int d)
 {
     Node *new_node = new Node(d);
     if (head == NULL)
     {
         head = new_node;
+        tail = new_node;
         return;
     }
     else
     {
-        Node *temp = head;
-        while (temp->next != NULL)
-        {
-            temp = temp->next;
-        }
-        new_node->next = temp->next;
-        temp->next = new_node;
-        new_node->prev = temp;
+        new_node->next = tail->next;
+        tail->next = new_node;
+        tail = new_node;
     }
 }
-
-void print(Node *&head)
+void print(Node *&head, Node *&tail)
 {
     Node *temp = head;
     while (temp != NULL)
@@ -47,35 +39,39 @@ void print(Node *&head)
     }
     cout << endl;
 }
-
-void reverse(Node* &head){
-    Node *previous = NULL;
-    Node* curr=head;
-    Node *forward=NULL;
-
-    while(curr!=NULL){
+void reverse(Node *&head, Node *&tail)
+{
+    Node *curr = head;
+    Node *prev = NULL;
+    Node *forward;
+    if (head == tail)
+    {
+        return;
+    }
+    while (curr != NULL)
+    {
         forward = curr->next;
-        curr->next = previous;
-        previous=curr;
+        curr->next = prev;
+        prev = curr;
         curr = forward;
     }
-    head = previous;
+    head = prev;
 }
 
 int main()
 {
     Node *head = NULL;
+    Node *tail = NULL;
+    cout << "Enter How many?then enter elements: \n";
     int size;
     cin >> size;
+
     for (int i = 0; i < size; i++)
     {
         int d;
         cin >> d;
-        insertAtEnd(head, d);
+        insertAtEnd(head, tail, d);
     }
-    cout << "Before: ";
-    print(head);
-    reverse(head);
-    cout << "After: ";
-    print(head);
+    reverse(head, tail);
+    print(head, tail);
 }

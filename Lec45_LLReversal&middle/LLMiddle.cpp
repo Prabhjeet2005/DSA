@@ -6,13 +6,11 @@ class Node
 public:
     int data;
     Node *next;
-    Node *prev;
 
     Node(int data)
     {
         this->data = data;
         this->next = NULL;
-        this->prev = NULL;
     }
 };
 
@@ -33,7 +31,6 @@ void insertAtEnd(Node *&head, int d)
         }
         new_node->next = temp->next;
         temp->next = new_node;
-        new_node->prev = temp;
     }
 }
 
@@ -48,18 +45,28 @@ void print(Node *&head)
     cout << endl;
 }
 
-void reverse(Node* &head){
-    Node *previous = NULL;
-    Node* curr=head;
-    Node *forward=NULL;
-
-    while(curr!=NULL){
-        forward = curr->next;
-        curr->next = previous;
-        previous=curr;
-        curr = forward;
+int length(Node *&head)
+{
+    Node *temp = head;
+    int cnt = 1;
+    while (temp->next != NULL)
+    {
+        cnt++;
+        temp = temp->next;
     }
-    head = previous;
+    return cnt;
+}
+
+void printMiddle(Node *head, int starting)
+{
+    Node *temp = head;
+    int cnt = 1;
+    while (cnt < starting)
+    {
+        temp = temp->next;
+        cnt++;
+    }
+    print(temp);
 }
 
 int main()
@@ -67,15 +74,14 @@ int main()
     Node *head = NULL;
     int size;
     cin >> size;
+    int d;
     for (int i = 0; i < size; i++)
     {
-        int d;
         cin >> d;
         insertAtEnd(head, d);
     }
-    cout << "Before: ";
+    int len = length(head);
+    len = (len / 2) + 1;
     print(head);
-    reverse(head);
-    cout << "After: ";
-    print(head);
+    printMiddle(head, len);
 }

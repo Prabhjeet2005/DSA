@@ -45,44 +45,47 @@ void print(Node *head)
     cout << endl;
 }
 
-bool isLoop(Node *&head)
+void firstLoopNode(Node *&head)
 {
     if (head == NULL)
     {
-        return false;
+        return;
     }
+    // Write your code here.
     Node *fast = head;
     Node *slow = head;
 
-    while (slow != NULL && fast != NULL && fast->next != NULL)
+    while (fast->next != NULL && fast != NULL)
     {
-        fast = fast->next;
-        if (fast->next != NULL)
-        {
-            fast = fast->next;
-        }
+        fast = fast->next->next;
         slow = slow->next;
         if (slow == fast)
         {
-            return 1;
+            slow = head;
+            while (slow != fast)
+            {
+                fast = fast->next;
+                slow = slow->next;
+            }
+            while (fast->next != slow)
+            {
+                fast = fast->next;
+            }
+            fast->next = NULL;
         }
     }
-    return 0;
 }
 
 int main()
 {
     Node *head = NULL;
-    // int size, d;
-    // cin >> size;
 
-    // JUST FOR EXAMPLE A LOOP I HAVE CREATED
-
-    for (int i = 1; i <= 5; i++)
+    for (int i = 1; i <= 50; i += 10)
     {
 
-        insertAtEnd(head, i);
+        insertAtEnd(head, i + 9);
     }
+    // print(head);
     Node *t = head->next;
     Node *temp = head;
     while (temp->next != NULL)
@@ -90,5 +93,6 @@ int main()
         temp = temp->next;
     }
     temp->next = t;
-    cout << isLoop(head) << endl;
+    firstLoopNode(head);
+    print(head);
 }

@@ -1,81 +1,63 @@
 #include <iostream>
 using namespace std;
 
-class Node
+int partition(int *arr, int s, int e)
 {
-public:
-    int data;
-    Node *next;
-    Node *prev;
+    int pivotElement = arr[s];
 
-    Node(int data)
+    int mid = s + (e - s) / 2;
+    int cnt = 0;
+    for (int i = s + 1; i <= e; i++)
     {
-        this->data = data;
-        this->next = NULL;
-        this->prev = NULL;
+        if (arr[i] <= pivotElement)
+            cnt++;
     }
-};
 
-void insertAtEnd(Node *&head, int d)
-{
-    Node *new_node = new Node(d);
-    if (head == NULL)
+    int pivotIndex = s + cnt;
+    swap(arr[s], arr[pivotIndex]);
+
+    int i = s, j = e;
+
+    while (i < pivotIndex && j > pivotIndex)
     {
-        head = new_node;
+        while (arr[i] <= pivotElement)
+        {
+            i++;
+        }
+        while (arr[j] > pivotElement)
+        {
+            j--;
+        }
+        if (i < pivotIndex && j > pivotIndex)
+        {
+            swap(arr[i++], arr[j--]);
+        }
+    }
+   
+    return pivotIndex;
+}
+
+void quickSort(int *arr, int s, int e)
+{
+    if (s >= e)
+    {
         return;
     }
-    else
-    {
-        Node *temp = head;
-        while (temp->next != NULL)
-        {
-            temp = temp->next;
-        }
-        new_node->next = temp->next;
-        temp->next = new_node;
-        new_node->prev = temp;
-    }
-}
 
-void print(Node *&head)
-{
-    Node *temp = head;
-    while (temp != NULL)
-    {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-}
-
-void reverse(Node* &head){
-    Node *previous = NULL;
-    Node* curr=head;
-    Node *forward=NULL;
-
-    while(curr!=NULL){
-        forward = curr->next;
-        curr->next = previous;
-        previous=curr;
-        curr = forward;
-    }
-    head = previous;
+    int mid = s + (e - s) / 2;
+    int p = partition(arr, s, e);
+    quickSort(arr, s, p - 1);
+    quickSort(arr, p + 1, e);
 }
 
 int main()
 {
-    Node *head = NULL;
-    int size;
-    cin >> size;
+    int arr[10] = {7, 2, 4, 5, 9, 5};
+    int size = 6;
+    quickSort(arr, 0, size - 1);
     for (int i = 0; i < size; i++)
     {
-        int d;
-        cin >> d;
-        insertAtEnd(head, d);
+        cout << arr[i] << " ";
     }
-    cout << "Before: ";
-    print(head);
-    reverse(head);
-    cout << "After: ";
-    print(head);
+    cout << endl;
 }

@@ -1,20 +1,20 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-stack<int> pushAtBottom(stack<int> &myStack, int x)
+void pushAtBottom(stack<int> &s, int x)
 {
     // Write your code here.
-    if (myStack.empty())
+    if (s.empty())
     {
-        myStack.push(x);
-        return myStack;
+        s.push(x);
+        return;
     }
-    int num = myStack.top();
-    myStack.pop();
-    pushAtBottom(myStack, x);
+    int num = s.top();
+    s.pop();
+    pushAtBottom(s, x);
 
-    myStack.push(num);
-    return myStack;
+    s.push(num);
+    return;
 }
 int main()
 {
@@ -25,11 +25,11 @@ int main()
     myStack.push(4);
     myStack.push(5);
     stack<int> ans;
-   
-   ans = pushAtBottom(myStack, 10);
-    while (!ans.empty())
+
+    pushAtBottom(myStack, 10);
+    while (!myStack.empty())
     {
-        cout << ans.top() << " ";
-        ans.pop();
+        cout << myStack.top() << " ";
+        myStack.pop();
     }
 }

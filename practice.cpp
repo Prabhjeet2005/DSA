@@ -1,23 +1,63 @@
 #include <iostream>
 using namespace std;
-
-void rev(string &str)
+int partition(int *arr, int s, int e)
 {
-    int s = 0, e = str.length() - 1;
-    while (s < e)
+    int pivotElement = arr[s];
+    int cnt = 0;
+
+    for (int i = s + 1; i <= e; i++)
     {
-        char temp = str[s];
-        str[s] = str[e];
-        str[e] = temp;
-        s++;
-        e--;
+        if (arr[i] <= pivotElement)
+        {
+            cnt++;
+        }
     }
+
+    int pivotIndex = s + cnt;
+    swap(arr[pivotIndex], arr[s]);
+
+    int i = s, j = e;
+    while (i < pivotIndex && j > pivotIndex)
+    {
+        while (arr[i] <= pivotElement)
+        {
+            i++;
+        }
+        while (arr[j] > pivotElement)
+        {
+            j--;
+        }
+        if (i < pivotIndex && j > pivotIndex)
+        {
+            swap(arr[i++], arr[j--]);
+        }
+    }
+
+    return pivotIndex;
+}
+
+void quickSort(int *arr, int s, int e)
+{
+    if (s >= e)
+    {
+        return;
+    }
+    int p = partition(arr, s, e);
+    quickSort(arr, s, p - 1);
+    quickSort(arr, p + 1, e);
 }
 
 int main()
 {
+    int arr[] = {5, 2, 8, 5, 2, 9, 2, 1};
+    int size = 8;
 
-    string str = "Babbar";
-    rev(str);
-    cout << str << endl;
+    quickSort(arr, 0, size - 1);
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    cout << endl;
 }

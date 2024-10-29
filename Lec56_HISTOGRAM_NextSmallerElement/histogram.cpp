@@ -10,7 +10,7 @@ vector<int> prevSmaller(vector<int> arr, int n)
     vector<int> ans(n);
     for (int i = 0; i < n; i++)
     {
-        while (stack.top() != -1 && arr[stack.top()] >= arr[i])
+        while (stack.top() != -1 && arr[stack.top()] >= arr[i]) //HERE MISTAKE 
         {
             stack.pop();
         }

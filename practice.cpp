@@ -1,67 +1,59 @@
 #include <iostream>
-#include <stack>
-#include <vector>
 using namespace std;
 
-vector<int> nextSmaller(vector<int> &arr, int n)
+int partition(int *arr, int s, int e)
 {
-    stack<int> stack;
-    stack.push(-1);
-    vector<int> ans(n);
-
-    for (int i = n - 1; i >= 0; i--)
+    int pivotElement = arr[s];
+    int cnt = 0;
+    for (int i = s + 1; i <= e; i++)
     {
-        if (stack.top() != -1 && arr[stack.top()] >= arr[i])
+        if (arr[i] <= pivotElement)
         {
-            stack.pop();
+            cnt++;
         }
-        ans[i] = stack.top();
-        stack.push(i);
     }
-    return ans;
+    int pivotIndex = s + cnt;
+    swap(arr[s], arr[pivotIndex]);
+
+    int i = s, j = e;
+    while (i < pivotIndex && j > pivotIndex)
+    {
+        while (arr[i] <= pivotElement)
+        {
+            i++;
+        }
+        while (arr[j] > pivotElement)
+        {
+            j--;
+        }
+        if (i < pivotIndex && j > pivotIndex)
+        {
+            swap(arr[i++], arr[j--]);
+        }
+    }
+    return pivotIndex;
 }
 
-vector<int> prevSmaller(vector<int> &arr, int n)
+void quickSort(int *arr, int s, int e)
 {
-    vector<int> ans(n);
-    stack<int> stack;
-    stack.push(-1);
-
-    for (int i = 0; i < n; i++)
+    if (s >= e)
     {
-        if (stack.top() != -1 && arr[stack.top()] >= arr[i])
-        {
-            stack.pop();
-        }
-        ans[i] = stack.top();
-        stack.push(i);
+        return;
     }
-    return ans;
+    int p = partition(arr, s, e);
+    quickSort(arr, s, p - 1);
+    quickSort(arr, p + 1, e);
 }
 
 int main()
 {
-    vector<int> heights = {2, 1, 5, 6, 2, 3};
+    int arr[] = {4, 2, 3, 5, 6, 8, 3};
+    int size = 7;
+    quickSort(arr, 0, size - 1);
 
-    int n = heights.size();
-    vector<int> next(n);
-    next = nextSmaller(heights, n);
-    vector<int> prev(n);
-    prev = prevSmaller(heights, n);
-
-    int ans = -2;
-
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < size; i++)
     {
-        int length = heights[i];
-        if (next[i] == -1)
-        {
-            next[i] = n;
-        }
-        int breadth = next[i] - prev[i] - 1;
-
-        int area = length * breadth;
-        ans = max(ans, area);
+        cout << arr[i] << " ";
     }
-    cout << ans << endl;
+    cout << endl;
 }

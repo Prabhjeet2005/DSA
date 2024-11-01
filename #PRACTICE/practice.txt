@@ -1,3 +1,4 @@
 Lec56_HISTOGRAM_NextSmallerElement/histogram.cpp
 Lec57_FamousCelebrity_MaxRectangle/famousCeleb.cpp (v.v.imp)
 Lec58_NStacks/nStacks.cpp (V.V.imp)
+Lec59_SpecialStack/ConstantOperationsStack.cpp (TRICKY)

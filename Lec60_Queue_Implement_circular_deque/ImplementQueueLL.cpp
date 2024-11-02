@@ -29,17 +29,21 @@ public:
     Node *tail;
     int qfront;
     int rear;
-    Queue(int data)
+    Queue()
     {
-        Node *node = new Node(data);
-        head = node;
-        tail = node;
         qfront = 0;
-        rear = 1;
+        rear = 0;
     }
     void push(int d)
     {
         Node *newnode = new Node(d);
+        if (head == NULL)
+        {
+            head = newnode;
+            tail = newnode;
+            rear++;
+            return;
+        }
         tail->next = newnode;
         tail = tail->next;
         rear++;
@@ -94,7 +98,7 @@ public:
 int main()
 {
     int a = 10;
-    Queue q(a);
+    Queue q;
     q.push(20);
     q.push(30);
     q.push(40);
@@ -108,4 +112,5 @@ int main()
     cout << q.pop() << endl;
     cout << q.pop() << endl;
     cout << q.isEmpty() << endl;
+    cout << 1 % 5 << endl;
 }

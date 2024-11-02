@@ -1,59 +1,94 @@
 #include <iostream>
 using namespace std;
 
-int partition(int *arr, int s, int e)
+class Queue
 {
-    int pivotElement = arr[s];
-    int cnt = 0;
-    for (int i = s + 1; i <= e; i++)
+public:
+    int *arr;
+    int front;
+    int rear;
+    int size;
+    Queue(int size)
     {
-        if (arr[i] <= pivotElement)
-        {
-            cnt++;
-        }
+        this->size = size;
+        arr = new int[size];
+        front = -1;
+        rear = -1;
     }
-    int pivotIndex = s + cnt;
-    swap(arr[s], arr[pivotIndex]);
 
-    int i = s, j = e;
-    while (i < pivotIndex && j > pivotIndex)
+    bool push(int value)
     {
-        while (arr[i] <= pivotElement)
+        if ((rear == front - 1 % (size - 1)) || (front == 0 && rear == size - 1))
         {
-            i++;
+            return 0;
         }
-        while (arr[j] > pivotElement)
+        else if (front == -1)
         {
-            j--;
+            front = rear = 0;
+            arr[rear] = value;
         }
-        if (i < pivotIndex && j > pivotIndex)
+        else if (front != 0 && rear == size - 1)
         {
-            swap(arr[i++], arr[j--]);
+            rear = 0;
+            arr[rear] = value;
         }
+        else
+        {
+            rear++;
+            arr[rear] = value;
+        }
+        return 1;
     }
-    return pivotIndex;
-}
 
-void quickSort(int *arr, int s, int e)
+    int pop()
+    {
+        int f = 0;
+        if (front == -1)
+        {
+            return -1;
+        }
+        else if (front == 0 && rear == 0)
+        {
+            f = arr[front];
+            arr[front] = -1;
+            front = rear = -1;
+        }
+        else if (front == size - 1)
+        {
+            f = arr[front];
+            arr[front] = -1;
+            front = 0;
+        }
+        else
+        {
+            f = arr[front];
+            arr[front] = -1;
+            front++;
+        }
+        return arr[front];
+    }
+    void print()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            cout << front << " " << arr[i] << " " << rear << " ,";
+        }
+        cout << endl;
+    }
+};
+
+int main() 
 {
-    if (s >= e)
-    {
-        return;
-    }
-    int p = partition(arr, s, e);
-    quickSort(arr, s, p - 1);
-    quickSort(arr, p + 1, e);
-}
-
-int main()
-{
-    int arr[] = {4, 2, 3, 5, 6, 8, 3};
-    int size = 7;
-    quickSort(arr, 0, size - 1);
-
-    for (int i = 0; i < size; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    Queue q(4);
+    cout << q.push(10) << endl;
+    cout << q.push(20) << endl;
+    cout << q.push(30) << endl;
+    cout << q.push(40) << endl;
+    cout << q.push(50) << endl;
+    q.print();
+    cout << q.pop() << endl;
+    cout << q.pop() << endl;
+    cout << q.pop() << endl;
+    cout << q.pop() << endl;
+    cout << q.pop() << endl;
 }

@@ -66,6 +66,7 @@
 		"unordered_map": "cpp",
 		"utility": "cpp",
 		"vector": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"queue": "cpp"
 	}
 }

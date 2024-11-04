@@ -2,3 +2,7 @@ Lec56_HISTOGRAM_NextSmallerElement/histogram.cpp
 Lec57_FamousCelebrity_MaxRectangle/famousCeleb.cpp (v.v.imp)
 Lec58_NStacks/nStacks.cpp (V.V.imp)
 Lec59_SpecialStack/ConstantOperationsStack.cpp (TRICKY)
+Lec60_Queue_Implement_circular_deque/DoublyEndedQueue.cpp
+Lec61_QueueQuesALL/SlidingWindowFirstNegNo.cpp (SLIDING WINDOW very imp)
+Lec61_QueueQuesALL/nonRepeatCharacter.cpp (TRICKY)
+* Lec61_QueueQuesALL/CircularTour.cpp (V.V.V.IMP 2-3 times ASKED)

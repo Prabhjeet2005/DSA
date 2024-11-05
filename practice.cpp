@@ -29,29 +29,20 @@ void insertAtHead(Node *&head, int data)
     temp->next = newnode;
 }
 
-Node *revk(Node *&head, int k)
+void rev(Node *&head)
 {
     Node *curr = head;
     Node *prev = NULL;
-    Node *f = NULL;
+    Node *fwd = NULL;
 
-    int cnt = 0;
-    Node *temp = head;
-    while (curr != NULL && cnt < k)
+    while (curr != NULL)
     {
-        f = curr->next;
+        fwd = curr->next;
         curr->next = prev;
         prev = curr;
-        curr = f;
-        cnt++;
+        curr = fwd;
     }
-
-    if (f != NULL && cnt>=k)
-    {
-        head->next = revk(f, k);
-    }
-    return prev;
-    
+    head = prev;
 }
 
 void print(Node *&head)
@@ -79,6 +70,6 @@ int main()
     insertAtHead(head, 50);
     int k = 3;
     print(head);
-    head = revk(head, k);
+    rev(head);
     print(head);
 }

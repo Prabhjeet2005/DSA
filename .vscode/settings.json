@@ -67,6 +67,7 @@
 		"utility": "cpp",
 		"vector": "cpp",
 		"stack": "cpp",
-		"queue": "cpp"
+		"queue": "cpp",
+		"deque": "cpp"
 	}
 }

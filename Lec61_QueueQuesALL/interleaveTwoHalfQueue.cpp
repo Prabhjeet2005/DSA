@@ -2,29 +2,6 @@
 #include <queue>
 using namespace std;
 
-// void interleave(queue<int> &q)
-// {
-//     int size = q.size();
-//     int i = 0, j = q.size() / 2;
-//     int a1[100] = {0};
-//     int a2[100] = {0};
-//     for (int i = 0; i < size / 2; i++)
-//     {
-//         a1[i] = q.front();
-//         q.pop();
-//     }
-//     for (int i = 0; i < size / 2; i++)
-//     {
-//         a2[i] = q.front();
-//         q.pop();
-//     }
-//     for (int i = 0; i < size / 2; i++)
-//     {
-//         q.push(a1[i]);
-//         q.push(a2[i]);
-//     }
-// }
-
 void interleave(queue<int>&q){
     queue<int> newq;
     int size = q.size() / 2;
@@ -40,6 +17,100 @@ void interleave(queue<int>&q){
         q.pop();
     }
 }
+
+// //{ Driver Code Starts
+// // Initial Template for C++
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// // } Driver Code Ends
+// // User function Template for C++
+
+// class Solution
+// {
+// public:
+//     vector<int> rearrangeQueue(queue<int> &q)
+//     {
+//         stack<int> stack;
+//         int size = q.size();
+
+//         for (int i = 0; i < size / 2; i++)
+//         {
+//             stack.push(q.front());
+//             q.pop();
+//         }
+
+//         while (!stack.empty())
+//         {
+//             q.push(stack.top());
+//             stack.pop();
+//         }
+
+//         for (int i = 0; i < size / 2; i++)
+//         {
+//             q.push(q.front());
+//             q.pop();
+//         }
+
+//         for (int i = 0; i < size / 2; i++)
+//         {
+//             stack.push(q.front());
+//             q.pop();
+//         }
+
+//         while (!stack.empty())
+//         {
+//             q.push(stack.top());
+//             q.push(q.front());
+//             q.pop();
+//             stack.pop();
+//         }
+
+//         vector<int> ans;
+//         for (int i = 0; i < size; i++)
+//         {
+//             ans.push_back(q.front());
+//             q.pop();
+//         }
+
+//         return ans;
+//     }
+// };
+
+// //{ Driver Code Starts.
+
+// int main()
+// {
+
+//     int t;
+//     cin >> t;
+//     while (t--)
+//     {
+//         int n;
+//         cin >> n;
+
+//         queue<int> q;
+//         for (int i = 0; i < n; i++)
+//         {
+//             int a;
+//             cin >> a;
+//             q.push(a);
+//         }
+//         Solution ob;
+//         vector<int> ans = ob.rearrangeQueue(q);
+//         for (int i = 0; i < ans.size(); i++)
+//         {
+//             cout << ans[i] << " ";
+//         }
+//         cout << endl;
+
+//         cout << "~" << "\n";
+//     }
+
+//     return 0;
+// }
+// // } Driver Code Ends
 
 int main()
 {

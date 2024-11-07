@@ -1,75 +1,16 @@
-#include <iostream>
-using namespace std;
+LINEAR
+1. Bisection Method
+2. Gauss Seidal
+3. Euler
+4. Regular Falsi
+5. Jacobi
 
-class Node
-{
-public:
-    Node *next;
-    int data;
-    Node(int data)
-    {
-        this->data = data;
-        this->next = NULL;
-    }
-};
+Quadratic
+Newton Raphson Method
 
-void insertAtHead(Node *&head, int data)
-{
-    Node *newnode = new Node(data);
-    if (head == NULL)
-    {
-        head = newnode;
-        return;
-    }
-    Node *temp = head;
-    while (temp->next != NULL)
-    {
-        temp = temp->next;
-    }
-    temp->next = newnode;
-}
+2 Order
+1. Trapezoidal
 
-void rev(Node *&head)
-{
-    Node *curr = head;
-    Node *prev = NULL;
-    Node *fwd = NULL;
-
-    while (curr != NULL)
-    {
-        fwd = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = fwd;
-    }
-    head = prev;
-}
-
-void print(Node *&head)
-{
-    if (head == NULL)
-    {
-        return;
-    }
-    Node *temp = head;
-    while (temp != NULL)
-    {
-        cout << temp->data << " ";
-        temp = temp->next;
-    }
-    cout << endl;
-}
-
-int main()
-{
-    Node *head = NULL;
-    insertAtHead(head, 10);
-    insertAtHead(head, 20);
-    insertAtHead(head, 30);
-    insertAtHead(head, 40);
-    insertAtHead(head, 50);
-    int k = 3;
-    print(head);
-    rev(head);
-    print(head);
-}
+4th Order
+1. Rk Method 
+2. Simpson 1/3, 3/8

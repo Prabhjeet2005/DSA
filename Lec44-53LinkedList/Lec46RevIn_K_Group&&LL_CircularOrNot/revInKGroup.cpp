@@ -73,7 +73,7 @@ Node *revk(Node *head, int k)
         curr->next = prev;
         prev = curr;
         curr = fwd;
-        count++; 
+        count++;
     }
 
     //

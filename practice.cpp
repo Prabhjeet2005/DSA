@@ -1,63 +1,54 @@
-#include <iostream>
-#include <deque>
+#include<iostream>
+#include<queue>
 using namespace std;
 
-int sum(int *arr, int k, int n)
-{
-    deque<int> maxq;
-    deque<int> minq;
+class Node{
+    public:
+    Node* left;
+    Node* right;
+    int data;
 
-    for (int i = 0; i < k; i++)
-    {
-        while(!maxq.empty() && arr[maxq.front()]<=arr[i]){
-            maxq.pop_front();
-        }
-        while (!minq.empty() && arr[minq.front()] >= arr[i])
-        {
-            minq.pop_front();
-        }
-        minq.push_back(i);
-        maxq.push_back(i);
+    Node(int data){
+        this->data=data;
+        this->right=NULL;
+        this->left = NULL;
+    }
+};
+
+Node* binaryTree(Node* root){
+    cout<<"Enter Data: ";
+    int data;
+    cin>>data;
+
+    root=new Node(data);
+    if(data==-1){
+        return NULL;
     }
 
-    int sum = 0;
-    sum += arr[maxq.front()] + arr[minq.front()];
-    cout << arr[maxq.front()] << " " << arr[minq.front()] << " " << sum << endl;
+    cout<<"Enter to left to "<<data<<endl;
+    root->left=binaryTree(root->left);
 
-    for (int i = k; i < n; i++)
-    {
-        if (!maxq.empty() && i - maxq.front() >= k)
-        {
-            maxq.pop_front();
-        }
-        if (!minq.empty() && i - minq.front() >= k)
-        {
-            minq.pop_front();
-        }
+    cout << "Enter to right to " << data << endl;
+    root->right = binaryTree(root->right);
 
-        while (!maxq.empty() && arr[maxq.front()] <= arr[i])
-        {
-            maxq.pop_front();
-        }
-        while (!minq.empty() && arr[minq.front()] >= arr[i])
-        {
-            minq.pop_front();
-        }
-
-        minq.push_back(i);
-        maxq.push_back(i);
-
-        sum += arr[minq.front()] + arr[maxq.front()];
-        cout << arr[maxq.front()] << " " << arr[minq.front()] << " " << sum << endl;
-    }
-    return sum;
+    return root;
 }
 
-int main()
-{
-    int arr[7] = {2, 5, -1, 7, -3, -1, -2};
-    int k = 4;
-    int n = 7;
-    cout << sum(arr, k, n) << endl;
+void preorder(Node* root){
+    
 }
 
+int main(){
+    Node* root=NULL;
+    root = binaryTree(root);
+    // 1 2 -1 -1 3 -1 -1
+    levelOrderTraversal(root);
+}
+
+/*
+1 3 4 -1 -1 9 -1 -1 7 10 -1 -1 -1
+INORDER: (LSR) 6 3 5 2 4 1
+POSTORDER(LRS) 6 5 3 4 2 1
+PREORDER(SLR) 1 2 3 6 5 4
+
+*/

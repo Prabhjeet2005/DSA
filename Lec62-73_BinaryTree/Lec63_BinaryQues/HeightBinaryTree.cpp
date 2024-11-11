@@ -56,4 +56,5 @@ int main()
     root = binaryTree(root);
     cout << endl;
     cout << "height: " << height(root) << endl;
+    cout << endl;
 }

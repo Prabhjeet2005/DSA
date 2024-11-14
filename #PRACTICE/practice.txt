@@ -13,3 +13,6 @@ Lec61_QueueQuesALL/CircularTour.cpp               (V.V.V.IMP 2-3 times ASKED)
 Lec60_Queue_Implement_circular_deque/QueueUsingStack.cpp
 Lec61_QueueQuesALL/kQueue.cpp                      (V.V.V IMP)
 Lec61_QueueQuesALL/Max&MinSumSubarray.cpp           (SLIDING WINDOW HARD IMP)
+
+BINARY TREE:-
+Lec62-73_BinaryTree/Lec63_BinaryQues/DiameterBinaryTree.cpp (TRICKY)

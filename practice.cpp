@@ -1,56 +1,101 @@
-#include<iostream>
-#include<queue>
+#include <iostream>
+#include <queue>
 using namespace std;
 
-class Node{
-    public:
-    Node* left;
-    Node* right;
+class Node
+{
+public:
     int data;
+    Node *left;
+    Node *right;
 
-    Node(int data){
-        this->data=data;
-        this->right=NULL;
+    Node(int data)
+    {
+        this->data = data;
         this->left = NULL;
+        this->right = NULL;
     }
 };
 
-Node* binaryTree(Node* root){
-    cout<<"Enter Data: ";
+Node *createTree(Node *root)
+{
+    cout << "Enter Data: ";
     int data;
-    cin>>data;
+    cin >> data;
 
-    root=new Node(data);
-    if(data==-1){
+    if (data == -1)
+    {
         return NULL;
     }
 
-    cout<<"Enter to left to "<<data<<endl;
-    root->left=binaryTree(root->left);
+    root = new Node(data);
 
-    cout << "Enter to right to " << data << endl;
-    root->right = binaryTree(root->right);
+    cout << "Enter Left OF: " << data << endl;
+    root->left = createTree(root->left);
+
+    cout << "Enter Right of: " << data << endl;
+    root->right = createTree(root->right);
 
     return root;
 }
 
-void preorder(Node* root){
+void levelOrder(Node *root)
+{
+    queue<Node *> q;
+    q.push(root);
+    q.push(NULL);
+
+    while (!q.empty())
+    {
+        Node *temp = q.front();
+        q.pop();
+
+        if (temp == NULL)
+        {
+            cout << endl;
+            if (!q.empty())
+            {
+                q.push(NULL);
+            }
+        }
+        else
+        {
+            cout << temp->data << " ";
+            if (temp->left)
+            {
+                q.push(temp->left);
+            }
+            if (temp->right)
+            {
+                q.push(temp->right);
+            }
+        }
+    }
+}
+
+int height(Node* root){
+    if(root==NULL){
+        return 0;
+    }
+
+    int left = height(root->left);
+    int right = height(root->right);
+    int ans = max(right,left) + 1;
+
+    return ans;
+}
+
+int diameter(Node* root){
     
 }
 
-int main(){
-    Node* root=NULL;
-    root = binaryTree(root);
-    // 1 2 -1 -1 3 -1 -1
-    levelOrderTraversal(root);
+int main()
+{
+    Node *root = NULL;
+    root = createTree(root);
+    cout << endl;
+    levelOrder(root);
+    cout << endl;
+
+    cout << "Height: " << height(root) << endl;
 }
-
-
-
-/*
-1 3 4 -1 -1 9 -1 -1 7 10 -1 -1 -1
-INORDER: (LSR) 6 3 5 2 4 1
-POSTORDER(LRS) 6 5 3 4 2 1
-PREORDER(SLR) 1 2 3 6 5 4
-
-*/

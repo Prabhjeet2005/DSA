@@ -36,22 +36,21 @@ Node *binaryTree(Node *root)
     return root;
 }
 
-int height(Node *root)
-{
-    if (root == NULL)
-    {
+int height(Node* root){
+    if(root==NULL){
         return 0;
     }
-    int left = height(root->left);
-    int right = height(root->right);
+    int leftTree = height(root->left);
+    int rightTree = height(root->right);
 
-    int ans = max(left, right) + 1;
+    int ans = max(leftTree, rightTree) + 1;
 
     return ans;
 }
 
 int main()
 {
+    // 1 3 4 -1 -1 9 -1 -1 7 10 -1 -1 -1
     Node *root = NULL;
     root = binaryTree(root);
     cout << endl;

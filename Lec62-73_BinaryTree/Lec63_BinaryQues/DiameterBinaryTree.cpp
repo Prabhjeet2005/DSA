@@ -1,5 +1,5 @@
 #include <iostream>
-#include <utility>
+#include <queue>
 using namespace std;
 
 class Node
@@ -8,6 +8,7 @@ public:
     int data;
     Node *left;
     Node *right;
+
     Node(int data)
     {
         this->data = data;
@@ -29,7 +30,7 @@ Node *createTree(Node *root)
 
     root = new Node(data);
 
-    cout << "Enter Left of: " << data << endl;
+    cout << "Enter Left OF: " << data << endl;
     root->left = createTree(root->left);
 
     cout << "Enter Right of: " << data << endl;
@@ -37,38 +38,71 @@ Node *createTree(Node *root)
 
     return root;
 }
-// first Diameter, second Height
-pair<int, int> diameterFast(Node *root)
+
+void levelOrder(Node *root)
+{
+    queue<Node *> q;
+    q.push(root);
+    q.push(NULL);
+
+    while (!q.empty())
+    {
+        Node *temp = q.front();
+        q.pop();
+
+        if (temp == NULL)
+        {
+            cout << endl;
+            if (!q.empty())
+            {
+                q.push(NULL);
+            }
+        }
+        else
+        {
+            cout << temp->data << " ";
+            if (temp->left)
+            {
+                q.push(temp->left);
+            }
+            if (temp->right)
+            {
+                q.push(temp->right);
+            }
+        }
+    }
+}
+
+pair<int, int> diameter(Node *root)
 {
     if (root == NULL)
     {
         pair<int, int> p = make_pair(0, 0);
         return p;
     }
+    pair<int, int> left = diameter(root->left);
+    pair<int, int> right = diameter(root->right);
 
-    pair<int,int> left = diameterFast(root->left);
-    pair<int,int> right = diameterFast(root->right);
+    int height = left.second + right.second + 1;
 
-    int height = left.second + 1 + right.second;
-
-    int op1 = left.first;
-    int op2 = right.first;
     pair<int, int> ans;
-    ans.first = max(op1, max(op2, height));
-    // ans.second=max(left.second,right.second)+1;
-
+    ans.first = max(left.first, max(right.first, height));
+    ans.second = max(left.second, right.second) + 1;
     return ans;
 }
-
-int diameter(Node *root)
+void dans(pair<int, int> ans)
 {
-    return diameterFast(root).first;
+    cout << "Diameter: " << ans.first << endl;
 }
 
 int main()
 {
-    // 1 3 4 -1 -1 9 -1 -1 7 10 -1 -1 -1
+    // 10 20 40 -1 -1 60 -1 -1 30 -1 -1
     Node *root = NULL;
     root = createTree(root);
-    cout << diameter(root);
+    cout << endl;
+    levelOrder(root);
+    cout << endl;
+    pair<int, int> ans = diameter(root);
+    dans(ans);
 }

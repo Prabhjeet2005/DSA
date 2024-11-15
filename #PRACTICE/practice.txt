@@ -16,3 +16,5 @@ Lec61_QueueQuesALL/Max&MinSumSubarray.cpp           (SLIDING WINDOW HARD IMP)
 
 BINARY TREE:-
 Lec62-73_BinaryTree/Lec63_BinaryQues/DiameterBinaryTree.cpp (TRICKY)
+Lec62-73_BinaryTree/Lec63_BinaryQues/BalancedTree.cpp       (Tough)
+Lec62-73_BinaryTree/Lec63_BinaryQues/SumTree.cpp        (V.V.IMP 2-3 times Asked)

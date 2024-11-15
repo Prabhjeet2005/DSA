@@ -90,28 +90,35 @@ void levelOrder(Node *root)
     }
 }
 
-int Sum(Node *root, bool &ans)
+// int height(Node *root)
+// {
+//     if (root == NULL)
+//     {
+//         return 0;
+//     }
+//     int left = height(root->left);
+//     int right = height(root->right);
+
+//     int ans = max(left, right) + 1;
+//     return ans;
+// }
+
+pair<bool, int> isBalanced(Node *root)
 {
     if (root == NULL)
     {
-        return 0;
-    }
-    if (root->left == NULL && root->right == NULL)
-    {
-        return root->data;
+        pair<bool, int> p = make_pair(1, 0);
+        return p;
     }
 
-    int left = Sum(root->left,ans);
-    int right = Sum(root->right,ans);
+    pair<bool, int> left = isBalanced(root->left);
+    pair<bool, int> right = isBalanced(root->right);
 
-    ans = root->data == left + right;
-    return root->data + left + right;
-}
+    bool diff = abs(left.second - right.second) <= 1;
+    pair<bool, int> ans;
+    ans.first = left.first && right.first && diff;
+    ans.second = max(left.second, right.second) + 1;
 
-bool isSumTree(Node *root)
-{
-    bool ans = 1;
-    int s = Sum(root,ans);
     return ans;
 }
 
@@ -125,5 +132,6 @@ int main()
     cout << endl;
     levelOrder(root);
     cout << endl;
-    isSumTree(root) == 1 ? cout << "TRUE" << endl : cout << "FALSE" << endl;
+    pair<bool, int> ans = isBalanced(root);
+    cout << ans.first << endl;
 }

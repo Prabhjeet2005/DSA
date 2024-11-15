@@ -101,8 +101,8 @@ int Sum(Node *root, bool &ans)
         return root->data;
     }
 
-    int left = Sum(root->left,ans);
-    int right = Sum(root->right,ans);
+    int left = Sum(root->left, ans);
+    int right = Sum(root->right, ans);
 
     ans = root->data == left + right;
     return root->data + left + right;
@@ -111,9 +111,47 @@ int Sum(Node *root, bool &ans)
 bool isSumTree(Node *root)
 {
     bool ans = 1;
-    int s = Sum(root,ans);
+    int s = Sum(root, ans);
     return ans;
 }
+/*
+pair<bool, int> Sum(Node *root)
+{
+    if (root == NULL)
+    {
+        pair<bool, int> p = make_pair(true, 0);
+        return p;
+    }
+    if (root->left == NULL && root->right == NULL)
+    {
+        pair<bool, int> p = make_pair(true, root->data);
+        return p;
+    }
+
+    pair<bool, int> left = Sum(root->left);
+    pair<bool, int> right = Sum(root->right);
+
+    bool condition = root->data == left.second + right.second;
+    pair<bool, int> ans;
+    if (left.first && right.first && condition)
+    {
+        ans.first = true;
+        ans.second = root->data + left.second + right.second;
+    }
+    else
+    {
+        ans.first = false;
+        ans.second = root->data + left.second + right.second;
+    }
+    return ans;
+}
+
+bool isSumTree(Node *root)
+{
+    return Sum(root).first;
+}
+*/
+
 
 int main()
 {

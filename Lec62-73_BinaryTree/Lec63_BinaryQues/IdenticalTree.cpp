@@ -8,7 +8,6 @@ public:
     int data;
     Node *left;
     Node *right;
-
     Node(int data)
     {
         this->data = data;
@@ -19,7 +18,6 @@ public:
 
 void createTree(Node *&root)
 {
-    queue<Node *> q;
     cout << "Enter Root: ";
     int data;
     cin >> data;
@@ -28,36 +26,64 @@ void createTree(Node *&root)
     {
         return;
     }
+    queue<Node *> q;
     q.push(root);
+
     while (!q.empty())
     {
-
         Node *temp = q.front();
         q.pop();
-        cout << "Enter Left Of: " << temp->data << endl;
+
+        cout << "Enter Left of: " << temp->data << endl;
         int ldata;
         cin >> ldata;
         if (ldata != -1)
         {
-            Node *t = new Node(ldata);
-            temp->left = t;
-            q.push(t);
+            temp->left = new Node(ldata);
+            q.push(temp->left);
         }
 
-        cout << "Enter Right OF: " << temp->data << endl;
+        cout << "Enter Right of: " << temp->data << endl;
         int rdata;
         cin >> rdata;
         if (rdata != -1)
         {
-            Node *t = new Node(rdata);
-            temp->right = t;
-            q.push(t);
+            temp->right = new Node(rdata);
+            q.push(temp->right);
         }
     }
 }
 
+void Inorder(Node *r1, Node *r2, bool &ans)
+{
+    if (r1 == NULL || r2 == NULL)
+    {
+        return;
+    }
+    Inorder(r1->left, r2->left, ans);
+
+    //COMPARE DATA
+    
+    if (r1->data != r2->data)
+    {
+        ans = 0;
+    }
+    Inorder(r1->right, r2->right, ans);
+}
+
+bool identical(Node *r1, Node *r2)
+{
+    bool ans = 1;
+    Inorder(r1, r2, ans);
+    return ans;
+}
+
 void levelOrder(Node *root)
 {
+    if (root == NULL)
+    {
+        return;
+    }
     queue<Node *> q;
     q.push(root);
     q.push(NULL);
@@ -90,40 +116,17 @@ void levelOrder(Node *root)
     }
 }
 
-int Sum(Node *root, bool &ans)
-{
-    if (root == NULL)
-    {
-        return 0;
-    }
-    if (root->left == NULL && root->right == NULL)
-    {
-        return root->data;
-    }
-
-    int left = Sum(root->left,ans);
-    int right = Sum(root->right,ans);
-
-    ans = root->data == left + right;
-    return root->data + left + right;
-}
-
-bool isSumTree(Node *root)
-{
-    bool ans = 1;
-    int s = Sum(root,ans);
-    return ans;
-}
-
 int main()
 {
-    // 10 20 40 -1 -1 60 -1 -1 -1
-
-    // USE LEVEL ORDER
-    Node *root = NULL;
-    createTree(root);
-    cout << endl;
-    levelOrder(root);
-    cout << endl;
-    isSumTree(root) == 1 ? cout << "TRUE" << endl : cout << "FALSE" << endl;
+    Node *root1 = NULL;
+    Node *root2 = NULL;
+    cout << "TREE1:-\n";
+    createTree(root1);
+    levelOrder(root1);
+    cout << "TREE2:-\n";
+    createTree(root2);
+    levelOrder(root2);
+    bool ans = identical(root1, root2);
+    cout << ans << endl;
+    ans == 1 ? cout << "Identical\n" : cout << "Not IDENTICAL\n";
 }

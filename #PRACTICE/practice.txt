@@ -18,3 +18,7 @@ BINARY TREE:-
 Lec62-73_BinaryTree/Lec63_BinaryQues/DiameterBinaryTree.cpp (TRICKY)
 Lec62-73_BinaryTree/Lec63_BinaryQues/BalancedTree.cpp       (Tough)
 Lec62-73_BinaryTree/Lec63_BinaryQues/SumTree.cpp        (V.V.IMP 2-3 times Asked)
+
+Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/zigZagTreeTraverse.cpp   (Tricky)
+Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/boundaryTree.cpp         (Tricky)
+Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/verticalTraversal.cpp    (V.V.V IMP Hard Tricky Tough)

@@ -1,129 +1,64 @@
 #include <iostream>
-#include <queue>
 using namespace std;
 
-class Node
+int partition(int *arr, int s, int e)
 {
-public:
-    int data;
-    Node *left;
-    Node *right;
+    int pivotElement = arr[s];
+    int count = 0;
 
-    Node(int data)
+    for (int i = s + 1; i <= e; i++)
     {
-        this->data = data;
-        this->left = NULL;
-        this->right = NULL;
+        if (arr[i] <= pivotElement)
+        {
+            count++;
+        }
     }
-};
+    int pivotIndex = s + count;
+    swap(arr[s], arr[pivotIndex]);
 
-void createTree(Node *&root)
+    int i = s, j = e;
+    while (i < pivotIndex && j > pivotIndex)
+    {
+        while (arr[i] <= pivotElement)
+        {
+            i++;
+        }
+        while (arr[j] > pivotElement)
+        {
+            j--;
+        }
+        if (i < pivotIndex && j > pivotIndex)
+        {
+            swap(arr[i++], arr[j--]);
+        }
+    }
+    return pivotIndex;
+}
+
+void quickSort(int *arr, int s, int e)
 {
-    queue<Node *> q;
-    cout << "Enter Root: ";
-    int data;
-    cin >> data;
-    root = new Node(data);
-    if (data == -1)
+    if (s >= e)
     {
         return;
     }
-    q.push(root);
-    while (!q.empty())
-    {
-
-        Node *temp = q.front();
-        q.pop();
-        cout << "Enter Left Of: " << temp->data << endl;
-        int ldata;
-        cin >> ldata;
-        if (ldata != -1)
-        {
-            Node *t = new Node(ldata);
-            temp->left = t;
-            q.push(t);
-        }
-
-        cout << "Enter Right OF: " << temp->data << endl;
-        int rdata;
-        cin >> rdata;
-        if (rdata != -1)
-        {
-            Node *t = new Node(rdata);
-            temp->right = t;
-            q.push(t);
-        }
-    }
-}
-
-void levelOrder(Node *root)
-{
-    queue<Node *> q;
-    q.push(root);
-    q.push(NULL);
-
-    while (!q.empty())
-    {
-        Node *temp = q.front();
-        q.pop();
-
-        if (temp == NULL)
-        {
-            cout << endl;
-            if (!q.empty())
-            {
-                q.push(NULL);
-            }
-        }
-        else
-        {
-            cout << temp->data << " ";
-            if (temp->left)
-            {
-                q.push(temp->left);
-            }
-            if (temp->right)
-            {
-                q.push(temp->right);
-            }
-        }
-    }
-}
-
-int Sum(Node *root, bool &ans)
-{
-    if (root == NULL)
-    {
-        return 0;
-    }
-    if (root->left == NULL && root->right == NULL)
-    {
-        return root->data;
-    }
-
-    int left = Sum(root->left,ans);
-    int right = Sum(root->right,ans);
-
-    ans = root->data == left + right;
-    return root->data + left + right;
-}
-
-bool isSumTree(Node *root)
-{
-    bool ans = 1;
-    int s = Sum(root,ans);
-    return ans;
+    int p = partition(arr, s, e);
+    quickSort(arr, s, p - 1);
+    quickSort(arr, p + 1, e);
 }
 
 int main()
 {
-    // 10 20 40 -1 -1 60 -1 -1 -1
-
-    // USE LEVEL ORDER
-    Node *root = NULL;
-    createTree(root);
+    int arr[10] = {4, 5, 7, 2, 1, 4, 6, 2};
+    int size = 8;
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
     cout << endl;
-    levelOrder(root);
+    quickSort(arr, 0, size - 1);
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
     cout << endl;
-    isSumTree(root) == 1 ? cout << "TRUE" << endl : cout << "FALSE" << endl;
 }

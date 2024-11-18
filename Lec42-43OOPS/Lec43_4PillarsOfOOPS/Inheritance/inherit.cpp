@@ -11,7 +11,7 @@ class Male : public Human
 public:
     int getHeight()
     {
-        return this->height;
+        return this -> height;
     }
 };
 int main()

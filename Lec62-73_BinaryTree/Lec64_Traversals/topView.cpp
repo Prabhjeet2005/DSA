@@ -10,7 +10,6 @@ public:
     int data;
     Node *left;
     Node *right;
-
     Node(int data)
     {
         this->data = data;
@@ -21,45 +20,49 @@ public:
 
 void createTree(Node *&root)
 {
-    queue<Node *> q;
-    cout << "Enter Root: ";
+    cout << "Enter root: ";
     int data;
     cin >> data;
     root = new Node(data);
+
     if (data == -1)
     {
         return;
     }
+    queue<Node *> q;
     q.push(root);
+
     while (!q.empty())
     {
-
         Node *temp = q.front();
         q.pop();
-        cout << "Enter Left Of: " << temp->data << endl;
+
+        cout << "Enter Left of " << temp->data << endl;
         int ldata;
         cin >> ldata;
         if (ldata != -1)
         {
-            Node *t = new Node(ldata);
-            temp->left = t;
-            q.push(t);
+            temp->left = new Node(ldata);
+            q.push(temp->left);
         }
 
-        cout << "Enter Right OF: " << temp->data << endl;
+        cout << "Enter Right of " << temp->data << endl;
         int rdata;
         cin >> rdata;
         if (rdata != -1)
         {
-            Node *t = new Node(rdata);
-            temp->right = t;
-            q.push(t);
+            temp->right = new Node(rdata);
+            q.push(temp->right);
         }
     }
 }
 
-void levelOrder(Node *root)
+void levelOrderPrint(Node *root)
 {
+    if (root->data == -1)
+    {
+        return;
+    }
     queue<Node *> q;
     q.push(root);
     q.push(NULL);
@@ -92,66 +95,54 @@ void levelOrder(Node *root)
     }
 }
 
-vector<int> verticalTraversal(Node *root)
+vector<int> topTraverse(Node *root)
 {
     vector<int> ans;
-    map<int, map<int, vector<int>>> nodes;
-
-    queue<pair<Node *, pair<int, int>>> q;
-
     if (root == NULL)
     {
         return ans;
     }
-    q.push(make_pair(root, make_pair(0, 0)));
+    map<int, int> map;
 
-    while (!q.empty())
-    {
-        pair<Node *, pair<int, int>> temp = q.front();
+    queue<pair<Node *, int>> q;
+    q.push(make_pair(root, 0));
+
+    while(!q.empty()){
+        pair<Node*, int> temp = q.front();
         q.pop();
+
         Node *frontNode = temp.first;
+        int hd = temp.second;
 
-        int hd = temp.second.first;   // Horizontal Distance
-        int lvl = temp.second.second; // LEVEL
+        if(map.find(hd) == map.end()){
+            map[hd] = frontNode->data;
+        }
 
-        nodes[hd][lvl].push_back(frontNode->data);
-
-        if (frontNode->left)
-        {
-            q.push(make_pair(frontNode->left, make_pair(hd - 1, lvl + 1)));
+        if(frontNode->left){
+            q.push(make_pair(frontNode->left, hd - 1));
         }
         if (frontNode->right)
         {
-            q.push(make_pair(frontNode->right, make_pair(hd + 1, lvl + 1)));
+            q.push(make_pair(frontNode->right, hd + 1));
         }
     }
-    for (auto i : nodes)
-    {
-        for (auto j : i.second)
-        {
-            for (auto k : j.second)
-            {
-                ans.push_back(k);
-            }
-        }
+
+    for(auto i:map){
+        ans.push_back(i.second);
     }
     return ans;
 }
 
 int main()
 {
-    // 1 2 3 4 5 6 7 -1 -1 -1 -1 -1 8 -1 9 -1 -1 -1 -1
-
-    // USE LEVEL ORDER
     Node *root = NULL;
     createTree(root);
-    cout << endl;
-    levelOrder(root);
-    cout << endl;
-    vector<int> ans = verticalTraversal(root);
-    for (int i = 0; i < ans.size(); i++)
+    levelOrderPrint(root);
+
+    vector<int> ans = topTraverse(root);
+    for (auto i : ans)
     {
-        cout << ans[i] << " ";
+        cout << i << " ";
     }
     cout << endl;
 }

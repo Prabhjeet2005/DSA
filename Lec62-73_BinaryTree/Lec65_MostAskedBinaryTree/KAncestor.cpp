@@ -98,38 +98,73 @@ void printLevelOrder(Node *root)
     }
 }
 
-void solve(Node *root, int sum, int &maxSum, int length, int &maxLength)
+class Solution
 {
-    if (root == NULL)
+private:
+    Node *solve(Node *root, int k, int &count, int target, int &ans)
     {
-        if (length > maxLength)
+        if (root == NULL)
         {
-            maxSum = sum;
-            maxLength = length;
+            return NULL;
         }
-        if (length == maxLength)
+        if (root->data == target)
         {
-            maxSum = max(sum, maxSum);
+            return root;
         }
-        return;
-    }
-    sum = sum + root->data;
-    solve(root->left, sum, maxSum, length + 1, maxLength);
-    solve(root->right, sum, maxSum, length + 1, maxLength);
-}
 
-int SumLongestPath(Node *root)
-{
-    int maxSum = 0, sum = 0, length = 0, maxLength = 0;
-    solve(root, sum, maxSum, length, maxLength);
-    return maxSum;
-}
+        Node *leftAns = solve(root->left, k, count, target, ans);
+        Node *rightAns = solve(root->right, k, count, target, ans);
+
+        if ((leftAns != NULL || rightAns != NULL))
+        {
+            count++;
+            if (count == k)
+            {
+                ans = root->data;
+            }
+            return root;
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+
+public:
+    int kAncestor(Node *root, int k, int node)
+    {
+        int count = 0;
+        int ans = -1;
+        solve(root, k, count, node, ans);
+        return ans;
+    }
+};
 
 int main()
 {
-    Node *root = NULL;
-    createTree(root);
-    cout << endl;
-    printLevelOrder(root);
-    cout << "Max Sum: " << SumLongestPath(root) << endl;
+
+    cout << "Enter Test Cases: ";
+    int tc;
+    cin >> tc;
+    while (tc != 0)
+    {
+        Node *root = NULL;
+        createTree(root);
+        printLevelOrder(root);
+
+        cout << "Enter k: ";
+        int k;
+        cin >> k;
+
+        cout << "Enter Node to Find Ancestor: ";
+        int d;
+        cin >> d;
+        Node *node = new Node(d);
+
+        Solution ob;
+        int ans = ob.kAncestor(root, k, node->data);
+        cout << "Ans: " << ans << endl;
+
+        tc--;
+    }
 }

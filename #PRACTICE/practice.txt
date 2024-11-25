@@ -19,13 +19,26 @@ Lec62-73_BinaryTree/Lec63_BinaryQues/DiameterBinaryTree.cpp (TRICKY)
 Lec62-73_BinaryTree/Lec63_BinaryQues/BalancedTree.cpp       (Tough)
 Lec62-73_BinaryTree/Lec63_BinaryQues/SumTree.cpp        (V.V.IMP 2-3 times Asked)
 
-(LECTURE 64 V.V.Imp Binary Tree Traversals IMP)
+
+(LECTURE 64 & LECTURE 65, V.V.V.V.V.Imp Binary Tree Traversals IMP)
+
+
 Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/zigZagTreeTraverse.cpp   (Tricky)
 Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/boundaryTree.cpp         (Tricky)
 Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/verticalTraversal.cpp    (V.V.V IMP Hard Tricky Tough)
-Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/topView.cpp              (V.V.Imp)
-Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/rightView.cpp            (V.V.Imp)
-Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/leftView.cpp             (V.V.Imp)
-Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/bottomView.cpp           (V.V.Imp)
-Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/diagonalTraversal.cpp    (V.Tricky IMP Hard)
+Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/topView.cpp              (Imp)
+Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/rightView.cpp            (Imp)
+Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/leftView.cpp             (Imp)
+Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/bottomView.cpp           (Imp)
+Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/diagonalTraversal.cpp    (V.Tricky V.IMP Hard)
+
+(ALL LECTURE 64 , 65 Most Important Trick)
+
+Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/LCA.cpp              (V.V.IMP 2-3 Times Asked)
+Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/KPathSum.cpp          (IMP)
+Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/KAncestor.cpp    (V.V.V IMP Many Times Asked Tricky Leetcode Hard)
+Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/NonAdjacentMaxSum.cpp
+
+
+
 

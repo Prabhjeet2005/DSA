@@ -98,31 +98,36 @@ void printLevelOrder(Node *root)
     }
 }
 
-void solve(Node *root, int sum, int &maxSum, int length, int &maxLength)
+Node *LCA(Node *root, int n1, int n2)
 {
     if (root == NULL)
     {
-        if (length > maxLength)
-        {
-            maxSum = sum;
-            maxLength = length;
-        }
-        if (length == maxLength)
-        {
-            maxSum = max(sum, maxSum);
-        }
-        return;
+        return NULL;
     }
-    sum = sum + root->data;
-    solve(root->left, sum, maxSum, length + 1, maxLength);
-    solve(root->right, sum, maxSum, length + 1, maxLength);
-}
+    if (root->data == n1 || root->data == n2)
+    {
+        return root;
+    }
 
-int SumLongestPath(Node *root)
-{
-    int maxSum = 0, sum = 0, length = 0, maxLength = 0;
-    solve(root, sum, maxSum, length, maxLength);
-    return maxSum;
+    Node *leftAns = LCA(root->left, n1, n2);
+    Node *rightAns = LCA(root->right, n1, n2);
+
+    if (leftAns != NULL && rightAns != NULL)
+    {
+        return root;
+    }
+    else if (leftAns == NULL && rightAns != NULL)
+    {
+        return rightAns;
+    }
+    else if (leftAns != NULL && rightAns == NULL)
+    {
+        return leftAns;
+    }
+    else
+    {
+        return NULL;
+    }
 }
 
 int main()
@@ -131,5 +136,16 @@ int main()
     createTree(root);
     cout << endl;
     printLevelOrder(root);
-    cout << "Max Sum: " << SumLongestPath(root) << endl;
+    cout << "\n\nEnter N1 & N2: ";
+    int n1, n2;
+    cin >> n1 >> n2;
+    Node *ans = LCA(root, n1, n2);
+    if (ans == NULL)
+    {
+        cout << "Not Found\n";
+    }
+    else
+    {
+        cout << "LCA: " << ans->data << endl;
+    }
 }

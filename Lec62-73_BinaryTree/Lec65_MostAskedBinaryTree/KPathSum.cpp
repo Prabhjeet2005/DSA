@@ -98,38 +98,63 @@ void printLevelOrder(Node *root)
     }
 }
 
-void solve(Node *root, int sum, int &maxSum, int length, int &maxLength)
+class Solution
 {
-    if (root == NULL)
+private:
+    void solve(Node *root, int &count, int k, vector<int> path)
     {
-        if (length > maxLength)
+        if (root == NULL)
         {
-            maxSum = sum;
-            maxLength = length;
+            return;
         }
-        if (length == maxLength)
-        {
-            maxSum = max(sum, maxSum);
-        }
-        return;
-    }
-    sum = sum + root->data;
-    solve(root->left, sum, maxSum, length + 1, maxLength);
-    solve(root->right, sum, maxSum, length + 1, maxLength);
-}
+        path.push_back(root->data);
+        int size = path.size();
 
-int SumLongestPath(Node *root)
-{
-    int maxSum = 0, sum = 0, length = 0, maxLength = 0;
-    solve(root, sum, maxSum, length, maxLength);
-    return maxSum;
-}
+        solve(root->left, count, k, path);
+        solve(root->right, count, k, path);
+
+        int sum = 0;
+        for (int i = size - 1; i >= 0; i--)
+        {
+            sum += path[i];
+            if (k == sum)
+            {
+                count++;
+            }
+        }
+    }
+
+public:
+    int KPathSum(Node *root, int k)
+    {
+        int count = 0;
+        vector<int> path;
+
+        solve(root, count, k, path);
+
+        return count;
+    }
+};
 
 int main()
 {
-    Node *root = NULL;
-    createTree(root);
-    cout << endl;
-    printLevelOrder(root);
-    cout << "Max Sum: " << SumLongestPath(root) << endl;
+
+    cout << "Enter Test Cases: ";
+    int tc;
+    cin >> tc;
+    while (tc != 0)
+    {
+        Node *root = NULL;
+        createTree(root);
+        printLevelOrder(root);
+
+        cout << "Enter k: ";
+        int k;
+        cin >> k;
+
+        Solution ob;
+        int ans = ob.KPathSum(root, k);
+        cout << "No. of Paths: " << ans << endl;
+        tc--;
+    }
 }

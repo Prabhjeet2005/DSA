@@ -98,38 +98,51 @@ void printLevelOrder(Node *root)
     }
 }
 
-void solve(Node *root, int sum, int &maxSum, int length, int &maxLength)
+class Solution
 {
-    if (root == NULL)
+private:
+    pair<int, int> solve(Node *root)
     {
-        if (length > maxLength)
+        if (root == NULL)
         {
-            maxSum = sum;
-            maxLength = length;
+            pair<int, int> p = make_pair(0, 0);
+            return p;
         }
-        if (length == maxLength)
-        {
-            maxSum = max(sum, maxSum);
-        }
-        return;
-    }
-    sum = sum + root->data;
-    solve(root->left, sum, maxSum, length + 1, maxLength);
-    solve(root->right, sum, maxSum, length + 1, maxLength);
-}
 
-int SumLongestPath(Node *root)
-{
-    int maxSum = 0, sum = 0, length = 0, maxLength = 0;
-    solve(root, sum, maxSum, length, maxLength);
-    return maxSum;
-}
+        pair<int, int> leftAns = solve(root->left);
+        pair<int, int> rightAns = solve(root->right);
+
+        pair<int, int> ans;
+        ans.first = root->data + leftAns.second + rightAns.second;
+        ans.second = max(leftAns.first, leftAns.second) + max(rightAns.first, rightAns.second);
+
+        return ans;
+    }
+
+public:
+    int NonAdjacent(Node *root)
+    {
+        pair<int, int> ans = solve(root);
+        return max(ans.first, ans.second);
+    }
+};
 
 int main()
 {
-    Node *root = NULL;
-    createTree(root);
-    cout << endl;
-    printLevelOrder(root);
-    cout << "Max Sum: " << SumLongestPath(root) << endl;
+    // 1 2 3 4 - 1 5 6 - 1 - 1 - 1 - 1 - 1 - 1
+    cout << "Enter Test Cases: ";
+    int tc;
+    cin >> tc;
+    while (tc != 0)
+    {
+        Node *root = NULL;
+        createTree(root);
+        printLevelOrder(root);
+
+        Solution ob;
+        int ans = ob.NonAdjacent(root);
+        cout << "Ans: " << ans << endl;
+
+        tc--;
+    }
 }

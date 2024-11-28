@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <map>
-#include <queue>
+#include <unordered_map>
 using namespace std;
 
 class Node
@@ -10,134 +9,70 @@ public:
     int data;
     Node *left;
     Node *right;
-
-    Node(int d)
+    Node(int data)
     {
-        this->data = d;
-        this->right = NULL;
+        this->data = data;
         this->left = NULL;
+        this->right = NULL;
     }
 };
 
-void createTree(Node *&root)
+class Solution
 {
-    int data;
-    cout << "Enter root: ";
-    cin >> data;
-
-    root = new Node(data);
-    if (data == -1)
+    void printTree(Node *&root)
     {
-        return;
+        if (root == NULL)
+        {
+            return;
+        }
+        printTree(root->left);
+        printTree(root->right);
+        cout << root->data << " ";
     }
 
-    queue<Node *> q;
-    q.push(root);
-
-    while (!q.empty())
+public:
+    Node *solve(vector<int> preorder, vector<int> inorder, int &preIndex, int inorderStart,
+                int inorderEnd, unordered_map<int, int> &findIndex, int size)
     {
-        Node *frontNode = q.front();
-        q.pop();
-
-        cout << "Enter Left of " << frontNode->data << endl;
-        int ldata;
-        cin >> ldata;
-        if (ldata != -1)
+        if (preIndex == size || inorderStart > inorderEnd)
         {
-            frontNode->left = new Node(ldata);
-            q.push(frontNode->left);
+            return NULL;
         }
+        int element = preorder[preIndex++];
+        Node *root = new Node(element);
+        int posInorder = findIndex[element];
 
-        cout << "Enter Right of: " << frontNode->data << endl;
-        int rdata;
-        cin >> rdata;
+        root->left = solve(preorder, inorder, preIndex, inorderStart, posInorder - 1, findIndex, size);
+        root->right = solve(preorder, inorder, preIndex, posInorder + 1, inorderEnd, findIndex, size);
 
-        if (rdata != -1)
-        {
-            frontNode->right = new Node(rdata);
-            q.push(frontNode->right);
-        }
-    }
-}
-
-void printLevelOrder(Node *root)
-{
-    queue<Node *> q;
-    if (root == NULL)
-    {
-        return;
-    }
-    q.push(root);
-    q.push(NULL);
-
-    while (!q.empty())
-    {
-        Node *frontNode = q.front();
-        q.pop();
-
-        if (frontNode == NULL)
-        {
-            cout << endl;
-            if (!q.empty())
-            {
-                q.push(NULL);
-            }
-        }
-        else
-        {
-            cout << frontNode->data << " ";
-            if (frontNode->left)
-            {
-                q.push(frontNode->left);
-            }
-            if (frontNode->right)
-            {
-                q.push(frontNode->right);
-            }
-        }
-    }
-}
-
-Node* LCA(Node* root,int n1, int n2){
-    if(root == NULL){
-        return NULL;
-    }
-    if(root->data == n1 || root->data == n2){
         return root;
     }
 
-    Node *left = LCA(root->left, n1, n2);
-    Node *right = LCA(root->right, n1, n2);
-
-    if(left != NULL && right != NULL){
-        return root;
+    void preInToPost(vector<int> preorder, vector<int> inorder)
+    {
+        unordered_map<int, int> findIndex;
+        int size = inorder.size();
+        for (int i = 0; i < size; i++)
+        {
+            findIndex[inorder[i]] = i;
+        }
+        int preIndex = 0;
+        Node *ans = solve(preorder, inorder, preIndex, 0, size - 1, findIndex, size);
+        printTree(ans);
     }
-    if(left!= NULL && right == NULL){
-        return left;
-    }
-    if(right !=NULL && left == NULL){
-        return right;
-    }else{
-        return NULL;
-    }
-}
+};
 
 int main()
 {
-    Node *root = NULL;
-    createTree(root);
-    cout << endl;
-    printLevelOrder(root);
-    cout << "\n\nEnter N1 & N2: ";
-    int n1, n2;
-    cin >> n1 >> n2;
-    Node *ans = LCA(root, n1, n2);
-    if (ans == NULL)
+    int tc = 1;
+    while (tc != 0)
     {
-        cout << "Not Found\n";
-    }
-    else
-    {
-        cout << "LCA: " << ans->data << endl;
+        Solution ob;
+        vector<int> pre = {0, 1, 3, 4, 2, 5};
+        vector<int> in = {3, 1, 4, 0, 5, 2};
+
+        ob.preInToPost(pre, in);
+
+        tc--;
     }
 }

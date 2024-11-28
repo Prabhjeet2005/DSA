@@ -39,6 +39,14 @@ Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/KPathSum.cpp          (IMP)
 Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/KAncestor.cpp    (V.V.V IMP Many Times Asked Tricky Leetcode Hard)
 Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/NonAdjacentMaxSum.cpp
 
+Lec62-73_BinaryTree/Lec66_ConstructTreeInPrePost/TreeFromInPre.cpp      (All PBC Most Important 100% V.V.IMP)
+Lec62-73_BinaryTree/Lec66_ConstructTreeInPrePost/TreeFromInPost.cpp      (All PBC Most Important 100% V.V.IMP)
+
+
+(BURN TREE VERY VERY IMPORTANT 100% MANY TIMES ASKED)
+Lec62-73_BinaryTree/Lec67_BurnBinaryTree/burnTree.cpp       (Hard Many Times Asked V.V.V imp)
+
+
 
 
 

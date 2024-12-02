@@ -97,35 +97,40 @@ void printTree(Node *root)
     cout << endl;
 }
 
-void morrisTraversal(Node* root){
-    if(root==NULL){
+void morrisTraversal(Node *root)
+{
+    if (root == NULL)
+    {
         return;
     }
-    Node* curr = root;
-
-    while(curr!=NULL){
-        if(curr->left == NULL){
+    Node *curr = root;
+    while (curr != NULL)
+    {
+        if (curr->left == NULL)
+        {
             cout << curr->data << " ";
             curr = curr->right;
         }
-        else{
-            Node *pred = curr->left;
-            while(pred->right != NULL && pred->right != curr){
-                pred = pred->right;
+        else
+        {
+            Node *predecessor = curr->left;
+            while(predecessor->right!=NULL && predecessor->right!=curr){
+                predecessor = predecessor->right;
             }
-            if(pred->right == NULL){
-                pred->right = curr ;
+            if (predecessor->right == NULL)
+            {
+                predecessor->right = curr;
                 curr = curr->left;
             }
-            else{
-                pred->right = NULL;
+            else
+            {
+                predecessor->right = NULL;
                 cout << curr->data << " ";
                 curr = curr->right;
             }
         }
     }
 }
-
 // 1 2 3 4 5 -1 6 -1 7 -1 -1 -1 -1 -1 -1
 int main()
 {

@@ -75,19 +75,11 @@ void insertBST(Node *&root, int d)
 
 Node *predecessor(Node *root)
 {
-    while (root->right != NULL)
-    {
-        root = root->right;
-    }
-    return root;
+    
 }
 Node *successor(Node *root)
 {
-    while (root->left != NULL)
-    {
-        root = root->left;
-    }
-    return root;
+    
 }
 
 void inorderPred(Node *root)
@@ -101,29 +93,24 @@ void inorderPred(Node *root)
     }
     Node *temp = root;
     Node *succ, *pred = NULL;
-    while (temp != NULL)
+    while (temp!=NULL)
     {
-        if (temp->data == x)
-        {
-            if (temp->left)
-            {
+        if(temp->data == x){
+            if(temp->left){
                 pred = predecessor(temp->left);
             }
-            if (temp->right)
-            {
+            if(temp->right){
                 succ = successor(temp->right);
             }
             break;
         }
-        else if (temp->data > x)
-        {
-            succ = temp;
-            temp = temp->left;
-        }
-        else
-        {
+        else if(temp->data < x){
             pred = temp;
             temp = temp->right;
+        }
+        else{
+            succ = temp;
+            temp = temp->left;
         }
     }
     cout << "Temp: " << temp->data << endl;

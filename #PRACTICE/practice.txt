@@ -20,6 +20,8 @@ Lec62-73_BinaryTree/Lec63_BinaryQues/BalancedTree.cpp       (Tough)
 Lec62-73_BinaryTree/Lec63_BinaryQues/SumTree.cpp        (V.V.IMP 2-3 times Asked)
 
 
+FAANG IMP QUES:-
+
 (LECTURE 64 & LECTURE 65, V.V.V.V.V.Imp Binary Tree Traversals IMP)
 
 
@@ -47,6 +49,9 @@ Lec62-73_BinaryTree/Lec66_ConstructTreeInPrePost/TreeFromInPost.cpp      (All PB
 Lec62-73_BinaryTree/Lec67_BurnBinaryTree/burnTree.cpp       (Hard Many Times Asked V.V.V imp)
 
 Lec62-73_BinaryTree/Lec68_MorrisTraversal/morrisTraversal.cpp ( SC->O(1) TC->O(N) Important Inorder,Preorder,Postorder)
+
+Lec62-73_BinaryTree/BST/Lec69_BstInsertDeleteSearch/deletionBST.cpp (Asked A Lot 2-3 Times Asked)
+
 
 
 

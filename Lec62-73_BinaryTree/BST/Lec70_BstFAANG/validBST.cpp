@@ -87,70 +87,85 @@ void printLevelOrder(Node *root)
     }
 }
 
-int successor(Node *root)
+Node *createTree(Node *&root)
 {
-    Node *temp = root;
-    while (temp->left != NULL)
+    cout << "Enter ROOT: ";
+    int data;
+    cin >> data;
+    root = new Node(data);
+    if (data == -1)
     {
-        temp = temp->left;
+        return NULL;
     }
-    return temp->data;
+
+    queue<Node *> q;
+    q.push(root);
+
+    while (!q.empty())
+    {
+        int size = q.size();
+
+        for (int i = 0; i < size; i++)
+        {
+            Node *temp = q.front();
+            q.pop();
+            cout << "Enter left of: " << temp->data;
+            int ldata;
+            cin >> ldata;
+            if (ldata != -1)
+            {
+                temp->left = new Node(ldata);
+                q.push(temp->left);
+            }
+
+            cout << "Enter right of: " << temp->data << endl;
+            int rdata;
+            cin >> rdata;
+            if (rdata != -1)
+            {
+                temp->right = new Node(rdata);
+                q.push(temp->right);
+            }
+        }
+    }
+    return root;
 }
 
-Node *delBST(Node *&root, int val)
+bool checkBST(Node *root, int min, int max)
 {
     if (root == NULL)
     {
-        return root;
+        return true;
     }
-    else if (root->data == val)
+    if (root->data >= min && root->data <= max)
     {
-        if (root->left == NULL && root->right == NULL)
-        {
-            delete root;
-            return NULL;
-        }
-        else if (root->left == NULL && root->right != NULL)
-        {
-            Node *temp = root->right;
-            delete root;
-            return root->right;
-        }
-        else if (root->left != NULL && root->right == NULL)
-        {
-            Node *temp = root->left;
-            delete root;
-            return temp;
-        }
-        else
-        {
-            int mini = successor(root->right);
-            root->data = mini;
-            root->right = delBST(root->right, mini);
-            return root;
-        }
-    }
-    else if (root->data > val)
-    {
-        root->left = delBST(root->left, val);
+        bool left = checkBST(root->left, min, root->data);
+        bool right = checkBST(root->right, root->data, max);
+        return left && right;
     }
     else
     {
-        root->right = delBST(root->right, val);
+        return false;
     }
-    return root;
+}
+
+bool validateBST(Node *root)
+{
+    return checkBST(root, INT_MIN, INT_MAX);
 }
 
 int main()
 {
     Node *root = NULL;
-    root = insertBST(root);
+    root = createTree(root);
     cout << endl;
     printLevelOrder(root);
-    cout << endl
-         << "Enter No. To Delete: ";
-    int val;
-    cin >> val;
-    root = delBST(root, val);
-    printLevelOrder(root);
+    if (validateBST(root))
+    {
+        cout << "IT IS BST\n";
+    }
+    else
+    {
+        cout << "It IS NOT BST \n";
+    }
 }

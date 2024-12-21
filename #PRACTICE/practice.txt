@@ -52,7 +52,12 @@ Lec62-73_BinaryTree/Lec68_MorrisTraversal/morrisTraversal.cpp ( SC->O(1) TC->O(N
 
 Lec62-73_BinaryTree/BST/Lec69_BstInsertDeleteSearch/deletionBST.cpp (Asked A Lot 2-3 Times Asked)
 
-Lec62-73_BinaryTree/BST/Lec70_BstFAANG/validBST.cpp     (FAANG)
+Lecture 70, 71 ->    (FAANG IMPORTANT)
+Lec62-73_BinaryTree/BST/Lec70_BstFAANG/validBST.cpp 
+Lec62-73_BinaryTree/BST/Lec70_BstFAANG/lcaBST.cpp   (Asked Many Times Important)
 
+Lec 71
+Lec62-73_BinaryTree/BST/Lec71_BstFAANG/twoSumBST.cpp    (IMP  Asked Many Times)
+Lec62-73_BinaryTree/BST/Lec71_BstFAANG/flattenBSTtoLL.cpp   (Tough v.v.v.Imp)
 
 

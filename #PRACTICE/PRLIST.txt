@@ -3,3 +3,5 @@ Implement nQueue
 Traversal Binary Tree
 Burn Tree
 Morris Traversal (Most Important as O(1) space complexity)
+AVL Tree      (Lec 71)
+Merge 2 BST   (V.V.V.Imp)

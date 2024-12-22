@@ -62,5 +62,5 @@ Lec62-73_BinaryTree/BST/Lec71_BstFAANG/flattenBSTtoLL.cpp   (Tough v.v.v.Imp)
 Lec62-73_BinaryTree/BST/Lec71_BstFAANG/BalancedBst.cpp    (AVL Tree V.V.IMP)
 Lec62-73_BinaryTree/BST/Lec71_BstFAANG/preorderToBST.cpp    (Tricky)
 
-Lec 72
-Lec62-73_BinaryTree/BST/Lec73_Merge2BST.cpp/merge2BST.cpp   (V.V.V.V.IMP Definitely Come)
+Lec 72 (Do Practice Merge 2BST)
+Lec62-73_BinaryTree/BST/Lec73_Merge2BST.cpp/merge2BST.cpp   (6 Ques in 1 && V.V.V.V.IMP Definitely Come)

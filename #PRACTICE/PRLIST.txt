@@ -4,4 +4,5 @@ Traversal Binary Tree
 Burn Tree
 Morris Traversal (Most Important as O(1) space complexity)
 AVL Tree      (Lec 71)
-Merge 2 BST   (V.V.V.Imp)
+Merge 2 BST   (V.V.V.Imp & Hard) 6 Ques in One , Do Practice This (Lec 72)
+

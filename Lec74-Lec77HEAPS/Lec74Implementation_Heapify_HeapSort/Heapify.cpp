@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+void heapify(int *arr, int n, int i)
+{
+  int largest = i;
+  int leftChild = 2 * i;
+  int rightChild = 2 * i + 1;
+
+  if (leftChild <= n && arr[leftChild] > arr[largest])
+  {
+    largest = leftChild;
+  }
+  if (rightChild <= n && arr[rightChild] > arr[largest])
+  {
+    largest = rightChild;
+  }
+
+  if (largest != i)
+  {
+    swap(arr[largest], arr[i]);
+    heapify(arr, n, largest);
+  }
+}
+
+int main()
+{
+  int arr[6] = {-1, 54, 53, 55, 52, 50};
+  int n = 5;
+  for (int i = n / 2; i >= 1; i--)
+  {
+    heapify(arr, n, i);
+  }
+  cout << "After Heapify: ";
+  for (int i = 1; i <= n; i++)
+  {
+    cout << arr[i] << " ";
+  }
+  cout << endl;
+}

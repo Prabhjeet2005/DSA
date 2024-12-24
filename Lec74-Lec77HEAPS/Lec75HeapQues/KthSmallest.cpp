@@ -4,52 +4,43 @@ using namespace std;
 
 void heapify(vector<int> &arr, int n, int i)
 {
-  int smallest = i;
+  int largest = i;
   int leftChild = 2 * i + 1;
   int rightChild = 2 * i + 2;
 
-  if (leftChild < n && arr[leftChild] > arr[smallest])
+  if (leftChild < n && arr[leftChild] > arr[largest])
   {
-    smallest = leftChild;
+    largest = leftChild;
   }
-  if (rightChild < n && arr[rightChild] > arr[smallest])
+  if (rightChild < n && arr[rightChild] > arr[largest])
   {
-    smallest = rightChild;
+    largest = rightChild;
   }
-  if (smallest != i)
+  if (largest != i)
   {
-    swap(arr[smallest], arr[i]);
-    heapify(arr, n, smallest);
-  }
-}
-
-void heapSort(vector<int> &arr, int n)
-{
-  int size = n;
-  while (size > 0)
-  {
-    swap(arr[size], arr[0]);
-    size--;
-
-    heapify(arr, size, 0);
+    swap(arr[largest], arr[i]);
+    heapify(arr, n, largest);
   }
 }
 
 int main()
 {
+
   vector<int> arr = {2, 3, 1, 20, 15};
-  int n = arr.size() - 1;
   int k = 4;
-  for (int i = n / 2 - 1; i >= 0; i--)
+
+  for (int i = k / 2 - 1; i >= 0; i--)
   {
-    heapify(arr, n, i);
+    heapify(arr, k, i);
   }
-  heapSort(arr, n);
-  for (int i = 0; i < n; i++)
+
+  for (int i = k; i < arr.size(); i++)
   {
-    if(i == k-1){
-      cout << arr[i] << endl;
+    if (arr[0] > arr[i])
+    {
+      arr[0] = arr[i];
+      heapify(arr, k, 0);
     }
   }
-  cout << endl;
+  cout << "Kth Smallest: " << arr[0]<<endl;
 }

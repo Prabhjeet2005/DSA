@@ -8,3 +8,6 @@ Merge 2 BST   (V.V.V.Imp & Hard) 6 Ques in One , Do Practice This (Lec 72)
 
 Heapify
 Heap Sort
+
+Kth Smallest -> (Max Heap) 
+Kth Largest  -> (Min Heap)

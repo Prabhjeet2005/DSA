@@ -71,3 +71,12 @@ Lec62-73_BinaryTree/BST/Lec73_Merge2BST.cpp/merge2BST.cpp   (6 Ques in 1 && V.V.
 ***   HEAP  ***
 Lec74
 Lec74-Lec77HEAPS/Lec74Implementation_Heapify_HeapSort/Heapify.cpp (V.V.Imp Asked A Lot Amazon)
+Lec74-Lec77HEAPS/Lec75HeapQues/KthSmallest.cpp    (Asked Google & all pbc)
+Lec74-Lec77HEAPS/Lec75HeapQues/MinCostRope.cpp
+
+
+
+
+
+
+

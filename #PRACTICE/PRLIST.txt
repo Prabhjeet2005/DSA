@@ -1,13 +1,19 @@
 Implement nStacks           (A bit)
 Implement nQueue
+
 Traversal Binary Tree
 Burn Tree
 Morris Traversal (Most Important as O(1) space complexity)
+
 AVL Tree      (Lec 71)
 Merge 2 BST   (V.V.V.Imp & Hard) 6 Ques in One , Do Practice This (Lec 72)
 
 Heapify
 Heap Sort
 
+Heap Kth Questions (Lec 75 some, Lec 76 & Lec 77)
 Kth Smallest -> (Max Heap) 
 Kth Largest  -> (Min Heap)
+MergeKSortedArrays      (V.V.V.Imp)
+MergeKSortedLinkedList  (V.V.V.Imp  Extremely Important ALL COMPANIES ASKED)
+

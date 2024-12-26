@@ -1,64 +1,68 @@
+// Merge k  sorted Array
 #include <iostream>
+#include <vector>
+#include <queue>
 using namespace std;
 
-int partition(int *arr, int s, int e)
+class node
 {
-  int pivotElement = arr[s];
-  int cnt = 0;
-  for (int i = s + 1; i <= e; i++)
+public:
+  int data;
+  int row;
+  int col;
+  node(int data, int row, int col)
   {
-    if (arr[i] <= pivotElement)
-    {
-      cnt++;
-    }
+    this->data = data;
+    this->col = col;
+    this->row = row;
   }
-  int pivotIndex = s + cnt;
-  swap(arr[s], arr[pivotIndex]);
+};
 
-  int i = s, j = e;
-  int k = 0;
-  while (i < pivotIndex && j > pivotIndex)
-  {
-    while (arr[i] < pivotElement)
-    {
-      i++;
-    }
-    while (arr[j] > pivotElement)
-    {
-      j--;
-    }
-    if (i < pivotIndex && j > pivotIndex)
-    {
-      swap(arr[i++], arr[j--]);
-    }
-  }
-  return pivotIndex;
-}
-
-void quickSort(int *arr, int s, int e)
+class compare
 {
-  if (s >= e)
+public:
+  bool operator()(node *a, node *b)
   {
-    return;
+    return a->data > b->data;
   }
-  int p = partition(arr, s, e);
-  quickSort(arr, s, p - 1);
-  quickSort(arr, p + 1, e);
+};
+
+vector<int> mergeKSortedArrays(vector<vector<int>> &kArrays, int k)
+{
+  priority_queue<node *, vector<node *>, compare> minHeap;
+  for (int i = 0; i<k; i++){
+    if(kArrays[i][0]){
+      node *temp = new node(kArrays[i][0], i, 0);
+      minHeap.push(temp);
+    }
+  }
+  vector<int> ans;
+
+  while(!minHeap.empty()){
+    node *top = minHeap.top();
+    minHeap.pop();
+    ans.push_back(top->data);
+    int row = top->row;
+    int col = top->col;
+    if(col+1 < kArrays[row].size() ){
+      node *temp = new node(kArrays[row][col + 1], row, col + 1);
+      minHeap.push(temp);
+    }
+  }
+  return ans;
 }
 
 int main()
 {
-  int arr[6] = {3, 2, 54, 6, 2, 5};
-  int size = 6;
-  for (int i = 0; i < size; i++)
+  vector<vector<int>> kArrays = {{1, 5, 9}, {45, 90}, {2, 6, 78, 100, 234}, {0}};
+  int k = 4;
+
+  vector<int> ans = mergeKSortedArrays(kArrays, k);
+
+  cout << "Final Vector: ";
+  for (auto i : ans)
   {
-    cout << arr[i] << " ";
-  }
-  cout << endl;
-  quickSort(arr, 0, size - 1);
-  for (int i = 0; i < size; i++)
-  {
-    cout << arr[i] << " ";
+    cout << i << " ";
   }
   cout << endl;
 }

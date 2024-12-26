@@ -16,4 +16,5 @@ Kth Smallest -> (Max Heap)
 Kth Largest  -> (Min Heap)
 MergeKSortedArrays      (V.V.V.Imp)
 MergeKSortedLinkedList  (V.V.V.Imp  Extremely Important ALL COMPANIES ASKED)
+MedianofStream          (V.V.V.Imp  Most IMPORTANT All Company Asked)
 

@@ -83,6 +83,8 @@ Lec74-Lec77HEAPS/Lec76HeapMedium/MergeKSortedArrays.cpp           (Tough V.V.V.V
 Lec74-Lec77HEAPS/Lec77HeapHARD/medianofStream.cpp        (All Company Asked V.V.V.Imp)
 
 
+*****HASHMAP******
+Lec78HashMap/maxFrequeuncyNumber.cpp    (Easy IMPORTANT MANY COMPANIES)
 
 
 

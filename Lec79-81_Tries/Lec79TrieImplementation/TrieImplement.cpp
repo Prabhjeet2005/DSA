@@ -8,9 +8,9 @@ public:
   TrieNode *children[26];
   bool isTerminal;
 
-  TrieNode(char data)
+  TrieNode(char ch)
   {
-    this->data = data;
+    data = ch;
     for (int i = 0; i < 26; i++)
     {
       children[i] = NULL;
@@ -23,7 +23,6 @@ class Trie
 {
 public:
   TrieNode *root;
-
   Trie()
   {
     root = new TrieNode('\0');
@@ -37,18 +36,21 @@ public:
       return;
     }
 
+    //  Assume All Capital Letters
     int index = word[0] - 'A';
     TrieNode *child;
 
+    // Present
     if (root->children[index] != NULL)
     {
       child = root->children[index];
     }
-    else
+    else //  Absent
     {
       child = new TrieNode(word[0]);
       root->children[index] = child;
     }
+
     insertUtil(child, word.substr(1));
   }
 
@@ -63,8 +65,10 @@ public:
     {
       return root->isTerminal;
     }
+
     int index = word[0] - 'A';
     TrieNode *child;
+
     if (root->children[index] != NULL)
     {
       child = root->children[index];
@@ -73,32 +77,37 @@ public:
     {
       return false;
     }
+
     return searchUtil(child, word.substr(1));
   }
 
   void searchTrie(string word)
   {
-    cout << "Present OR Not: " << searchUtil(root, word) << endl;
+    cout << "Present or  Not: " << searchUtil(root, word) << endl;
   }
-
-  void removeUtil(TrieNode* &root, string word){
-    if(word.length() == 0){
+  void removeUtil(TrieNode *root, string word)
+  {
+    if (word.length() == 0)
+    {
       root->isTerminal = false;
       return;
     }
 
     int index = word[0] - 'A';
-    TrieNode* child;
-    if(root->children[index] != NULL){
+    TrieNode *child;
+    if (root->children[index] != NULL)
+    {
       child = root->children[index];
     }
-    else{
+    else
+    {
       return;
     }
     removeUtil(child, word.substr(1));
   }
 
-  void removeTrie(string word){
+  void removeTrie(string word)
+  {
     removeUtil(root, word);
     cout << "Removed" << endl;
   }

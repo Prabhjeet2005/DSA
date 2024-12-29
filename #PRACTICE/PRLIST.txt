@@ -18,3 +18,10 @@ MergeKSortedArrays      (V.V.V.Imp)
 MergeKSortedLinkedList  (V.V.V.Imp  Extremely Important ALL COMPANIES ASKED)
 MedianofStream          (V.V.V.Imp  Most IMPORTANT All Company Asked)
 
+TRIE(Very Important)
+Implement Trie  (Asked)
+Trie Longest Common Prefix (V.V.V.IMP Asked a Lot)
+Implement Phone Directory (V.V.V Tough Hard IMP)
+
+
+

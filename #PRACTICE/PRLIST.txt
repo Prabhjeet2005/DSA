@@ -15,13 +15,17 @@ Heap Kth Questions (Lec 75 some, Lec 76 & Lec 77)
 Kth Smallest -> (Max Heap) 
 Kth Largest  -> (Min Heap)
 MergeKSortedArrays      (V.V.V.Imp)
-MergeKSortedLinkedList  (V.V.V.Imp  Extremely Important ALL COMPANIES ASKED)
+*MergeKSortedLinkedList  (V.V.V.Imp  Extremely Important ALL COMPANIES ASKED)
 MedianofStream          (V.V.V.Imp  Most IMPORTANT All Company Asked)
 
 TRIE(Very Important)
 Implement Trie  (Asked)
 Trie Longest Common Prefix (V.V.V.IMP Asked a Lot)
-Implement Phone Directory (V.V.V Tough Hard IMP)
+*Implement Phone Directory (V.V.V Tough Hard IMP)
+
+
+BACKTRACKING
+Rat in A Maze (Important Easy Asked All)
 
 
 

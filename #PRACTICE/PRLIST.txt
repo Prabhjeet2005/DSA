@@ -26,6 +26,7 @@ Trie Longest Common Prefix (V.V.V.IMP Asked a Lot)
 
 BACKTRACKING
 Rat in A Maze (Important Easy Asked All)
+Sudoku Solver (V.V.V.V.IMP Most Important Asked All Companies Google,Microsoft, all Company)
 
 
 

@@ -68,6 +68,10 @@
 		"vector": "cpp",
 		"stack": "cpp",
 		"queue": "cpp",
-		"deque": "cpp"
+		"deque": "cpp",
+		"__tree": "cpp",
+		"filesystem": "cpp",
+		"map": "cpp",
+		"unordered_set": "cpp"
 	}
 }

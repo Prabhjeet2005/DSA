@@ -3,7 +3,7 @@
 #include <string>
 #include <algorithm>
 
-//TC =>O(4^n^2)
+// TC =>O(4^n^2)
 using namespace std;
 bool isSafe(vector<vector<int>> &ques, vector<vector<int>> visited, int x, int y, int n)
 {
@@ -86,4 +86,5 @@ int main()
     {
         cout << ans[i] << " ";
     }
+    cout << endl;
 }

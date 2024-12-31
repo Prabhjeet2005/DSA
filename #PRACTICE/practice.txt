@@ -1,6 +1,6 @@
 STACK:-
 Lec56_HISTOGRAM_NextSmallerElement/histogram.cpp
-Lec57_FamousCelebrity_MaxRectangle/famousCeleb.cpp (v.v.imp)
+Lec57_FamousCelebrity_MaxRectangle/famousCeleb.cpp  (v.v.imp)
 Lec58_NStacks/nStacks.cpp                           (V.V.imp)
 Lec59_SpecialStack/ConstantOperationsStack.cpp      (TRICKY)
 Lec54-59_STACKS/Lec54_ImplementationStacks/stackUsingQueue.cpp
@@ -9,15 +9,15 @@ QUEUE:-
 Lec60_Queue_Implement_circular_deque/DoublyEndedQueue.cpp
 Lec61_QueueQuesALL/SlidingWindowFirstNegNo.cpp      (SLIDING WINDOW very imp)
 Lec61_QueueQuesALL/nonRepeatCharacter.cpp           (TRICKY)
-Lec61_QueueQuesALL/CircularTour.cpp               (V.V.V.IMP 2-3 times ASKED)
+Lec61_QueueQuesALL/CircularTour.cpp                 (V.V.V.IMP 2-3 times ASKED)
 Lec60_Queue_Implement_circular_deque/QueueUsingStack.cpp
-Lec61_QueueQuesALL/kQueue.cpp                      (V.V.V IMP)
+Lec61_QueueQuesALL/kQueue.cpp                       (V.V.V IMP)
 Lec61_QueueQuesALL/Max&MinSumSubarray.cpp           (SLIDING WINDOW HARD IMP)
 
 BINARY TREE:-
 Lec62-73_BinaryTree/Lec63_BinaryQues/DiameterBinaryTree.cpp (TRICKY)
 Lec62-73_BinaryTree/Lec63_BinaryQues/BalancedTree.cpp       (Tough)
-Lec62-73_BinaryTree/Lec63_BinaryQues/SumTree.cpp        (V.V.IMP 2-3 times Asked)
+Lec62-73_BinaryTree/Lec63_BinaryQues/SumTree.cpp            (V.V.IMP 2-3 times Asked)
 
 
 FAANG IMP QUES:-
@@ -36,9 +36,9 @@ Lec62-73_BinaryTree/Lec64_BinaryTreeMediumQUES/diagonalTraversal.cpp    (V.Trick
 
 (ALL LECTURE 64 , 65 Most Important Tricky)
 
-Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/LCA.cpp              (V.V.IMP 2-3 Times Asked)
-Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/KPathSum.cpp          (IMP)
-Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/KAncestor.cpp    (V.V.V IMP Many Times Asked Tricky Leetcode Hard)
+Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/LCA.cpp         (V.V.IMP 2-3 Times Asked)
+Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/KPathSum.cpp     (IMP)
+Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/KAncestor.cpp   (V.V.V IMP Many Times Asked Tricky Leetcode Hard)
 Lec62-73_BinaryTree/Lec65_MostAskedBinaryTree/NonAdjacentMaxSum.cpp
 
 Lec62-73_BinaryTree/Lec66_ConstructTreeInPrePost/TreeFromInPre.cpp      (All PBC Most Important 100% V.V.IMP)
@@ -59,9 +59,9 @@ Lec62-73_BinaryTree/BST/Lec70_BstFAANG/validBST.cpp
 Lec62-73_BinaryTree/BST/Lec70_BstFAANG/lcaBST.cpp   (Asked Many Times Important)
 
 Lec 71
-Lec62-73_BinaryTree/BST/Lec71_BstFAANG/twoSumBST.cpp    (IMP  Asked Many Times)
+Lec62-73_BinaryTree/BST/Lec71_BstFAANG/twoSumBST.cpp        (IMP  Asked Many Times)
 Lec62-73_BinaryTree/BST/Lec71_BstFAANG/flattenBSTtoLL.cpp   (Tough v.v.v.Imp)
-Lec62-73_BinaryTree/BST/Lec71_BstFAANG/BalancedBst.cpp    (AVL Tree V.V.IMP)
+Lec62-73_BinaryTree/BST/Lec71_BstFAANG/BalancedBst.cpp      (AVL Tree V.V.IMP)
 Lec62-73_BinaryTree/BST/Lec71_BstFAANG/preorderToBST.cpp    (Tricky)
 
 Lec 72 (Do Practice Merge 2BST)
@@ -88,12 +88,12 @@ Lec78HashMap/maxFrequeuncyNumber.cpp    (Easy IMPORTANT MANY COMPANIES)
 
 ******TRIE********
 Lec79-81_Tries/Lec79TrieImplementation/TrieImplement.cpp  (Trie Implementation Tough Very Important)
-Lec79-81_Tries/Lec80TrieQues/LongestCommonPrefix.cpp  (Ask Lots of Companies Important V.V.V.IMP Microsoft, Google)
+Lec79-81_Tries/Lec80TrieQues/LongestCommonPrefix.cpp      (Ask Lots of Companies Important V.V.V.IMP Microsoft, Google)
 *** Lec79-81_Tries/Lec81_ImplementPhoneDirectory/phoneDirectoryUsingTrie.cpp    (V.V.V.Tough V.V.V.V.IMPORTANT)
 
 ******BACKTRACKING********
-Lec82-84BackTracking/ratInAMaze.cpp (EASY Asked All Company V.V.IMP)
-**Lec82-84BackTracking/Lec84_SudokuSolver.cpp (ALL Companies EXTREMELY V.V.V.V.IMP GOOGLe,MICROSOFT & ALL Company)
+Lec82-84BackTracking/ratInAMaze.cpp           (EASY Asked All Company V.V.IMP)
+**Lec82-84BackTracking/Lec84_SudokuSolver.cpp (ALL Companies EXTREMELY V.V.V.V.IMP GOOGLE,MICROSOFT & ALL Company)
 
 
 

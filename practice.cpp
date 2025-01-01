@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 #include <unordered_map>
+
 using namespace std;
 
 class graph
@@ -15,16 +16,12 @@ public:
     {
       adj[v].push_back(u);
     }
-  };
+  }
 
-  void printAdjList()
-  {
-    cout << "Adjacency List:-\n";
-    for (auto i : adj)
-    {
+  void printAdj(){
+    for(auto i:adj){
       cout << i.first << " -> ";
-      for (auto j : i.second)
-      {
+      for(auto j:i.second){
         cout << j << " , ";
       }
       cout << endl;
@@ -32,20 +29,17 @@ public:
   }
 };
 
-int main()
+int
+main()
 {
+  int n = 5,m =5;
   graph g;
-  int n, m;
-  cout << "Enter No. of Nodes & Edges: ";
-  cin >> n >> m;
-
   for (int i = 0; i < m; i++)
   {
-    int u, v;
-    cout << "Enter u & v: ";
+    cout << "u & v: ";
+    int u,v;
     cin >> u >> v;
-    g.addEdge(u, v, 0);
+    g.addEdge(u, v, 1);
   }
-
-  g.printAdjList();
+  g.printAdj();
 }

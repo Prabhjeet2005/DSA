@@ -95,6 +95,16 @@ Lec79-81_Tries/Lec80TrieQues/LongestCommonPrefix.cpp      (Ask Lots of Companies
 Lec82-84BackTracking/ratInAMaze.cpp           (EASY Asked All Company V.V.IMP)
 **Lec82-84BackTracking/Lec84_SudokuSolver.cpp (ALL Companies EXTREMELY V.V.V.V.IMP GOOGLE,MICROSOFT & ALL Company)
 
+******GRAPHS********
+Lec85-101_Graphs/Lec86_BFS/BFS.cpp  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
+Lec85-101_Graphs/Lec87_DFS/Dfs.cpp  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
+
+
+
+
+
+
+
 
 
 

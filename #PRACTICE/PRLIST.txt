@@ -29,4 +29,17 @@ Rat in A Maze (Important Easy Asked All)
 Sudoku Solver (V.V.V.V.IMP Most Important Asked All Companies Google,Microsoft, all Company)
 
 
+GRAPHS
+BFS   (V.V.V.V.V Imp Asked All Companies)
+DFS   (V.V.V.V.V Imp Asked All Companies)
+
+
+
+
+
+
+
+
+
+
 

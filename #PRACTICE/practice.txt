@@ -99,7 +99,11 @@ Lec82-84BackTracking/ratInAMaze.cpp           (EASY Asked All Company V.V.IMP)
 Lec85-101_Graphs/Lec86_BFS/BFS.cpp  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 Lec85-101_Graphs/Lec87_DFS/Dfs.cpp  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 
+Lec85-101_Graphs/Lec88_CycleDetectionUndirected/cycleDetectionUndirected_BFS.cpp  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
+Lec85-101_Graphs/Lec88_CycleDetectionUndirected/cycleDetectionUndirected_DFS.cpp  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 
+Lec85-101_Graphs/Lec90_TopologicalSort_DFS/TopologicalSortDFS.cpp (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
+Lec85-101_Graphs/Lec91_TopologicalSort_BFS/TopologicalSort_BFS.cpp  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 
 
 

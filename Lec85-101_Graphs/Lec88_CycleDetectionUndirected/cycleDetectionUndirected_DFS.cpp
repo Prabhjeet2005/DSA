@@ -76,7 +76,7 @@ void cycleUndirectedBFS(vector<vector<int>> edges, string &ans)
 
 int main()
 {
-  vector<vector<int>> edges = {{4, 5}, {5, 6}, {5, 7}, {7, 8}, {6, 8}, {8, 9}};
+  vector<vector<int>> edges = {{4, 5}, {5, 6}, {5, 7}, {7, 8}, {6, 8}, {8, 9}, {11, 12}};
   string ans;
   cycleUndirectedBFS(edges, ans);
   cout << "Is Cycle: " << ans << endl;

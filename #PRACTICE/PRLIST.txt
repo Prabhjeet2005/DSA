@@ -36,7 +36,7 @@ DFS   (V.V.V.V.V Imp Asked All Companies)
 CycleDetection -> Undirected  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 CycleDetection -> Directed    (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 
-TopologicalSort -> BFS  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
+TopologicalSort -> BFS  [Kahn's Algorithm] (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 TopologicalSort -> DFS  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 
 

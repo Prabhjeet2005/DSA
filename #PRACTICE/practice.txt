@@ -53,7 +53,10 @@ Lec62-73_BinaryTree/Lec68_MorrisTraversal/morrisTraversal.cpp ( SC->O(1) TC->O(N
 Lec62-73_BinaryTree/BST/Lec69_BstInsertDeleteSearch/deletionBST.cpp (Asked A Lot 2-3 Times Asked)
 
 
-***   BST  ***
+
+
+
+*****************   BST  *********************
 Lecture 70, 71 ->    (FAANG IMPORTANT)
 Lec62-73_BinaryTree/BST/Lec70_BstFAANG/validBST.cpp 
 Lec62-73_BinaryTree/BST/Lec70_BstFAANG/lcaBST.cpp   (Asked Many Times Important)
@@ -68,14 +71,20 @@ Lec 72 (Do Practice Merge 2BST)
 Lec62-73_BinaryTree/BST/Lec73_Merge2BST.cpp/merge2BST.cpp   (6 Ques in 1 && V.V.V.V.IMP Definitely Come)
 {Covers BST->DLL, Merge 2 Sorted DLL, DLL->BST}
 
-***   HEAP  ***
+
+
+**************   HEAP  **************
 Lec74
 Lec74-Lec77HEAPS/Lec74Implementation_Heapify_HeapSort/Heapify.cpp (V.V.Imp Asked A Lot Amazon)
 Lec74-Lec77HEAPS/Lec75HeapQues/KthSmallest.cpp    (Asked Google & all pbc)
 Lec74-Lec77HEAPS/Lec75HeapQues/MinCostRope.cpp    (V.V.Imp)
 
+
+
 Lec 75 & Lec 76 (V.V.V.Imp Kth Questions Asked A Lot)
 Lec74-Lec77HEAPS/Lec76HeapMedium/KthLargestSumSubarray.cpp  (V.IMP)
+
+
 
 {***CustonM DS & Operator Overload***
 Lec74-Lec77HEAPS/Lec76HeapMedium/MergeKSortedArrays.cpp           (Tough V.V.V.V.IMP Atleat 15 Company Asked a Lot)
@@ -83,19 +92,27 @@ Lec74-Lec77HEAPS/Lec76HeapMedium/MergeKSortedArrays.cpp           (Tough V.V.V.V
 Lec74-Lec77HEAPS/Lec77HeapHARD/medianofStream.cpp        (All Company Asked V.V.V.Imp)
 
 
+
+
 *****HASHMAP******
 Lec78HashMap/maxFrequeuncyNumber.cpp    (Easy IMPORTANT MANY COMPANIES)
+
+
 
 ******TRIE********
 Lec79-81_Tries/Lec79TrieImplementation/TrieImplement.cpp  (Trie Implementation Tough Very Important)
 Lec79-81_Tries/Lec80TrieQues/LongestCommonPrefix.cpp      (Ask Lots of Companies Important V.V.V.IMP Microsoft, Google)
 *** Lec79-81_Tries/Lec81_ImplementPhoneDirectory/phoneDirectoryUsingTrie.cpp    (V.V.V.Tough V.V.V.V.IMPORTANT)
 
+
+
 ******BACKTRACKING********
 Lec82-84BackTracking/ratInAMaze.cpp           (EASY Asked All Company V.V.IMP)
 **Lec82-84BackTracking/Lec84_SudokuSolver.cpp (ALL Companies EXTREMELY V.V.V.V.IMP GOOGLE,MICROSOFT & ALL Company)
 
-******GRAPHS********
+
+
+**************GRAPHS  (All Are Important)**********************
 Lec85-101_Graphs/Lec86_BFS/BFS.cpp  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 Lec85-101_Graphs/Lec87_DFS/Dfs.cpp  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 
@@ -110,10 +127,10 @@ Lec85-101_Graphs/Lec87_DFS/Dfs.cpp  (V.V.V.V.IMP Ask Lots of Companies Important
 
 ***Lec85-101_Graphs/Lec95_Dijkstra_UndirectedWeighted/Dijkstra.cpp  [Most Important]  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, Google)
 
-Lec85-101_Graphs/Lec96_MinSpanningTree/Prims.cpp  (V.V.HARD TOUGH Microsoft)
-Lec85-101_Graphs/Lec97_KruskalMST/KruskalMST.cpp [Disjoint Set + Path Compression] (V.V.V.Imp Microsoft Amazon)
+*Lec85-101_Graphs/Lec96_MinSpanningTree/Prims.cpp  (V.V.HARD TOUGH Microsoft)
+*Lec85-101_Graphs/Lec97_KruskalMST/KruskalMST.cpp [Disjoint Set + Path Compression] (V.V.V.Imp Microsoft Amazon)
 
-
+***Lec85-101_Graphs/Lec98_BridgesInGraph/bridgesInGraph.cpp [TOUGH] [Interviewer Ask A Lot] (V.V.V.Imp Asked All PBC Google Microsoft 10+)
 
 
 

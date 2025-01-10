@@ -47,9 +47,10 @@ TopologicalSort -> DFS  (V.V.V.V.IMP Ask Lots of Companies Important Microsoft, 
 Prims   (V.V.V. HARD   Microsoft)
 Kruskal [Disjoint Set, Path Compression]  (V.V.V Imp Microsoft Amazon)
 
-***Bridges In Graphs [Interviewer Ask A Lot] [TOUGH] (V.V.V.Imp Asked All PBC Google Microsoft Amazon 10+)
+***Bridges In Graphs [Interviewer Ask A Lot] [HARD] [TOUGH] (V.V.V.Imp Asked All PBC Google Microsoft Amazon 10+)
+** Articulation Point [HARD] [V.V.V.Imp Asked A Lot ]  (Similar to bridges in a Graph)
 
-
+***Kosaraju [HARD]  (V.V.V.V.Imp Asked A Lot Google,Microsoft All PBC)
 
 
 

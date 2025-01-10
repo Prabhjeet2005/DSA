@@ -130,7 +130,18 @@ Lec85-101_Graphs/Lec87_DFS/Dfs.cpp  (V.V.V.V.IMP Ask Lots of Companies Important
 *Lec85-101_Graphs/Lec96_MinSpanningTree/Prims.cpp  (V.V.HARD TOUGH Microsoft)
 *Lec85-101_Graphs/Lec97_KruskalMST/KruskalMST.cpp [Disjoint Set + Path Compression] (V.V.V.Imp Microsoft Amazon)
 
-***Lec85-101_Graphs/Lec98_BridgesInGraph/bridgesInGraph.cpp [TOUGH] [Interviewer Ask A Lot] (V.V.V.Imp Asked All PBC Google Microsoft 10+)
+***Lec85-101_Graphs/Lec98_BridgesInGraph/bridgesInGraph.cpp [TOUGH] [HARD] [Interviewer Ask A Lot] (V.V.V.Imp Asked All PBC Google Microsoft 10+)
+***Lec85-101_Graphs/Lec99_ArticulationPoints/articulationPoints.cpp [HARD] (Similar to Bridges In Graph) (V.V.V.Imp Asked A Lot)
+
+*** Lec85-101_Graphs/Lec100_Kosaraju/KosarajuStronglyConnectedComponenets.cpp [HARD]  (V.V.V.V.Imp Asked A Lot Google,Microsoft All PBC)
+
+
+
+
+
+
+
+
 
 
 

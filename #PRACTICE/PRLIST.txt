@@ -52,9 +52,10 @@ Kruskal [Disjoint Set, Path Compression]  (V.V.V Imp Microsoft Amazon)
 
 ***Kosaraju [HARD]  (V.V.V.V.Imp Asked A Lot Google,Microsoft All PBC)
 
-
-
-
+********[Striver IMPORTANT  GRAPHS]**********
+1. Alien Dictionary  [v.v.imp]
+2. Number Of Islands  [100s of Companies Most Important MOST V.V.V.V.V.V.V.IMP Goggle Microsoft ALL COMPANIES Literally]
+3. Flood Fill [V.imp]
 
 
 

@@ -49,7 +49,7 @@ Kruskal [Disjoint Set, Path Compression]  (V.V.V Imp Microsoft Amazon)
 
 ***Bridges In Graphs [Interviewer Ask A Lot] [HARD] [TOUGH] (V.V.V.Imp Asked All PBC Google Microsoft Amazon 10+)
 ** Articulation Point [HARD] [V.V.V.Imp Asked A Lot ]  (Similar to bridges in a Graph)
-
+ 
 ***Kosaraju [HARD]  (V.V.V.V.Imp Asked A Lot Google,Microsoft All PBC)
 
 ********[Striver IMPORTANT  GRAPHS]**********
@@ -58,8 +58,9 @@ Kruskal [Disjoint Set, Path Compression]  (V.V.V Imp Microsoft Amazon)
 3. Flood Fill [V.imp]
 
 
+**********  Dynamic Programming **************
 
-
-
+Climbing Stairs
+Frog Jump
 
 

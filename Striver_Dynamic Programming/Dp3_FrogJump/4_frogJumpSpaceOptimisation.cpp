@@ -12,7 +12,7 @@ int main()
 
   for (int i = 2; i <= n; i++)
   {
-    int curri = min(prev1 + abs(steps[i] - steps[i - 1]), prev2 + abs(steps[i] - steps[i - 2]));
+    int curri = min(prev1 + abs(steps.at(i) - steps[i - 1]), prev2 + abs(steps.at(i) - steps[i - 2]));
     prev2 = prev1;
     prev1 = curri;
   }

@@ -26,7 +26,7 @@ int main()
 {
   vector<int> steps = {10, 20, 30, 10};
   int n = steps.size();
-  vector<int> dp(n, -1);
+  vector<int> dp(n+1, -1);
 
   cout << minCost(n - 1, dp, steps) << endl;
 }

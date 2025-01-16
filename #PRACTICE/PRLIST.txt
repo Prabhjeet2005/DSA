@@ -62,5 +62,7 @@ Kruskal [Disjoint Set, Path Compression]  (V.V.V Imp Microsoft Amazon)
 
 Climbing Stairs
 Frog Jump
+[ Maximum sum of non-adjacent elements [After this do House Robber]
+(*** Print All Subsequences ****) -------> PICK/Not PICK  ]
 
-
+House Robber (prerequiste: Max Sum non Adj) [V.imp]

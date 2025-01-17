@@ -24,6 +24,11 @@ int main(){
   vector<int>temp1;
   vector<int>temp2;
 
+  if (houses.size() == 1)
+  {
+    return houses[0];
+  }
+
   for (int i = 0; i<n; i++){
     if(i!=0){
       temp2.push_back(houses[i]);

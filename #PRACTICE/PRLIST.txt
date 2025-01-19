@@ -66,3 +66,28 @@ Frog Jump
 (*** Print All Subsequences ****) -------> PICK/Not PICK  ]
 
 House Robber (prerequiste: Max Sum non Adj) [V.imp]
+
+Ninja Training  [Amazon]  [Tabulation V.TOUGH]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

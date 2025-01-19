@@ -154,6 +154,42 @@ Frog Jump       (Dp Lec 3)
 (**** PRINT ALL SUBSEQUENCES ****)  -------> PICK/Not PICK ]
 
 House Robber [V.imp]
+Ninja Training  [Amazon]  [Tabulation V.TOUGH]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -74,6 +74,8 @@
 		"map": "cpp",
 		"unordered_set": "cpp",
 		"set": "cpp",
-		"list": "cpp"
+		"list": "cpp",
+		"fstream": "cpp",
+		"iomanip": "cpp"
 	}
 }

@@ -60,15 +60,17 @@ Kruskal [Disjoint Set, Path Compression]  (V.V.V Imp Microsoft Amazon)
 
 **********  Dynamic Programming **************
 
-Climbing Stairs
-Frog Jump
-[ Maximum sum of non-adjacent elements [After this do House Robber]
-(*** Print All Subsequences ****) -------> PICK/Not PICK  ]
+Climbing Stairs [Imp]
+Frog Jump [Imp]
 
-House Robber (prerequiste: Max Sum non Adj) [V.imp]
+Maximum sum of non-adjacent elements [Imp]
+(*** Print All Subsequences ****) -------> PICK/Not PICK
 
-Ninja Training  [Amazon]  [Tabulation V.TOUGH]
+House Robber    [imp] (prerequiste: Max Sum non Adj) 
+Ninja Training  [Tabulation V.TOUGH]
 
+Unique Paths    [Imp]
+Unique Paths 2 ( + Blocked Spaces)   [Imp]
 
 
 

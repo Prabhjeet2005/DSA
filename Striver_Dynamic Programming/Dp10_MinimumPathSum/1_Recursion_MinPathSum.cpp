@@ -11,12 +11,12 @@ int minPathSum(int row, int col, vector<vector<int>> &grid)
   }
   if (row < 0 || col < 0)
   {
-    return INT_MAX;
+    return 1e9;
   }
-  int up = minPathSum(row - 1, col, grid);
-  int left = minPathSum(row, col - 1, grid);
+  int up = grid[row][col] + minPathSum(row - 1, col, grid);
+  int left = grid[row][col] + minPathSum(row, col - 1, grid);
 
-  return grid[row][col] + min(up, left); // Min Path till now and then add the current path (Write grid[row][col] HERE)  [IMPORTANT]
+  return min(up, left); // Min Path till now and then add the current path (Write grid[row][col] HERE)  [IMPORTANT]
 }
 
 int main()

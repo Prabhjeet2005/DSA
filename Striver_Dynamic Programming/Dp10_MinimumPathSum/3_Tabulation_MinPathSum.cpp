@@ -21,16 +21,16 @@ int main()
       }
       else
       {
-        int left = INT_MAX, up = INT_MAX;
+        int left = 1e9, up = 1e9;
         if (row > 0)
         {
-          up = dp[row - 1][col];
+          up = path[row][col] + dp[row - 1][col];
         }
         if (col > 0)
         {
-          left = dp[row][col - 1];
+          left = path[row][col] + dp[row][col - 1];
         }
-        dp[row][col] = path[row][col] + min(left, up);
+        dp[row][col] = min(left, up);
       }
     }
   }

@@ -12,7 +12,7 @@ int minPathSum(int row, int col, vector<vector<int>> &dp, vector<vector<int>> &g
   }
   if (row < 0 || col < 0)
   {
-    return INT_MAX;
+    return 1e9;
   }
 
   if (dp[row][col] != -1)
@@ -20,10 +20,10 @@ int minPathSum(int row, int col, vector<vector<int>> &dp, vector<vector<int>> &g
     return dp[row][col];
   }
 
-  int up = minPathSum(row - 1, col, dp, grid);
-  int left = minPathSum(row, col - 1, dp, grid);
+  int up = grid[row][col] + minPathSum(row - 1, col, dp, grid);
+  int left = grid[row][col] + minPathSum(row, col - 1, dp, grid);
 
-  return dp[row][col] = grid[row][col] + min(up, left);
+  return dp[row][col] =  min(up, left);
 }
 
 int main()

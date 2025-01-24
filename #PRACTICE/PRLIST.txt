@@ -72,6 +72,8 @@ Ninja Training  [Tabulation V.TOUGH]
 Unique Paths    [Imp]
 Unique Paths 2 ( + Blocked Spaces)   [Imp]
 
+Minimum Path Sum [Imp]
+
 
 
 

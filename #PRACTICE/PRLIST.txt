@@ -58,19 +58,19 @@ Kruskal [Disjoint Set, Path Compression]  (V.V.V Imp Microsoft Amazon)
 3. Flood Fill [V.imp]
 
 
-**********  Dynamic Programming **************
+************  Dynamic Programming [Only V.V.Imp] ********************
 
-Climbing Stairs [Imp]
-Frog Jump [Imp]
+Climbing Stairs (Dp Lec 2 )
+Frog Jump       (Dp Lec 3)
+[ Max Sum Non Adjacent Elements [after this do HOUSE ROBBER]  (Dp Lec 5)
+(**** PRINT ALL SUBSEQUENCES ****)  -------> PICK/Not PICK ]
 
-Maximum sum of non-adjacent elements [Imp]
-(*** Print All Subsequences ****) -------> PICK/Not PICK
+House Robber [V.imp]
+Ninja Training  [Amazon]  [Tabulation V.TOUGH]
 
-House Robber    [imp] (prerequiste: Max Sum non Adj) 
-Ninja Training  [Tabulation V.TOUGH]
-
-Unique Paths    [Imp]
-Unique Paths 2 ( + Blocked Spaces)   [Imp]
+x ------- DP ON GRID --------- x
+Unique Paths  [imp] (Dp Lec 8)
+Unique Paths 2 ( + Blocked Spaces)
 
 Minimum Path Sum [Imp]  (Microsoft Interview)
 
@@ -78,8 +78,10 @@ Triangle (Fix Start Variable End)
 
 Max Path Sum  [imp] [Variable Start, Variable End]
 
-Cherry Pickup [V.V.HARD] [imp] (2 Starting Pt. Max Path Sum)
+Cherry Pickup [V.V.HARD] [imp] (2 Starting Pt. Max Path Sum)  [3D DP]
 
+x ------- DP ON SUBSEQUENCES --------- x
+Subsequences Sum Equal To K [Imp]
 
 
 

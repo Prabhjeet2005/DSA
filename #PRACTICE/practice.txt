@@ -156,6 +156,7 @@ Frog Jump       (Dp Lec 3)
 House Robber [V.imp]
 Ninja Training  [Amazon]  [Tabulation V.TOUGH]
 
+x ------- DP ON GRID --------- x
 Unique Paths (Dp Lec 8)
 Unique Paths 2 ( + Blocked Spaces)
 
@@ -166,6 +167,8 @@ Triangle (Fix Start Variable End)
 Max Path Sum  [imp] [Variable Start, Variable End]
 
 Cherry Pickup [V.V.HARD] [imp] (2 Starting Pt. Max Path Sum)
+
+x ------- DP ON SUBSEQUENCES --------- x
 
 
 

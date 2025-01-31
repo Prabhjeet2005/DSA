@@ -165,7 +165,7 @@ Triangle (Fix Start Variable End)
 
 Max Path Sum  [imp] [Variable Start, Variable End]
 
-Cherry Pickup [imp] (2 Starting Pt. Max Path Sum)
+Cherry Pickup [V.V.HARD] [imp] (2 Starting Pt. Max Path Sum)
 
 
 

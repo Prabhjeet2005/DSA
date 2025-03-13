@@ -171,6 +171,8 @@ Cherry Pickup [V.V.HARD] [imp] (2 Starting Pt. Max Path Sum)
 x ------- DP ON SUBSEQUENCES --------- x
 Subsequences Sum Equal To K [V.V.Imp] (Google Fav Ques)
 Partition Equal Subset Sum  [imp] (Amazon)
+Partition Subset Sum Min Difference [HARD]  [Service Based Companies]
+
 
 
 

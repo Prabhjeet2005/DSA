@@ -7,13 +7,16 @@ int main()
 {
   vector<int> arr = {3, 1, 5, 2, 8};
   int n = arr.size();
-  vector<vector<bool>> dp(n + 1, vector<bool>(n + 1, false));
   int totsum = 0;
+  for (int i = 0; i < n; i++)
+  {
+    totsum += arr[i];
+  }
+  vector<vector<bool>> dp(n + 1, vector<bool>(totsum + 1, false));
 
   for (int i = 0; i < n; i++)
   {
     dp[i][0] = true;
-    totsum += arr[i];
   }
 
   if (arr[0] <= totsum)

@@ -76,6 +76,7 @@
 		"set": "cpp",
 		"list": "cpp",
 		"fstream": "cpp",
-		"iomanip": "cpp"
+		"iomanip": "cpp",
+		"__functional_03": "cpp"
 	}
 }
